@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { IStyle } from "../ts-types/styleTypes";
 
-export const HeroImgStyle = styled.div`
+export const HeroImgStyle = styled.div<IStyle>`
   flex-basis: 100%;
   aspect-ratio: 7/6;
 

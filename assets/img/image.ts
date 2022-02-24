@@ -1,5 +1,5 @@
 interface Images {
-  [key: string]: String;
+  [key: string]: string;
 }
 
 const images: Images = {

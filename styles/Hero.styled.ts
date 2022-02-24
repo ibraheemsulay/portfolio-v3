@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { IStyle } from "../ts-types/styleTypes";
 
-export const HeroStyle = styled.section`
+export const HeroStyle = styled.section<IStyle>`
   display: flex;
   flex-wrap: wrap;
   width: 100%;

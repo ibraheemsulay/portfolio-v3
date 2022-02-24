@@ -1,21 +1,26 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
+import { Container } from "../styles/Container.styled";
+import { MainBodyStyle } from "../styles/MainBody.styled";
+import Hero from "../components/Hero";
+import About from "../components/About";
+import Skills from "../components/Skills";
+import ProjectsLayout from "../components/ProjectsLayout";
+import Workflow from "../components/Workflow";
+import Contact from "../components/Contact";
 
-const Home: NextPage = () => {
+const MainBody: NextPage = () => {
   return (
-    <div className="">
-      <Head>
-        <title>Ibrahim Sule Portfolio</title>
-        <meta name="description" content="Frontend Developer Portfolio" />
-        <meta
-          name="keywords"
-          content="frontend, front-end, Front-End, developer, ibrahim, ibraheem, ibraheemsulay, ibraheem sule, ibrahim sule, nextjs, next, vue, nuxt"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-    </div>
+    <MainBodyStyle>
+      <Container>
+        <Hero />
+      </Container>
+      <About />
+      <Skills />
+      <ProjectsLayout />
+      <Workflow />
+      <Contact />
+    </MainBodyStyle>
   );
 };
 
-export default Home;
+export default MainBody;

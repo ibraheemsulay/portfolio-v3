@@ -13,7 +13,7 @@ const AllProjects = () => {
         </div>
         {projectList.map((p, i) => (
           <div className="card" key={i}>
-            <Image src={p.image} alt="project webpage" />
+            <Image src={p.image} alt="project webpage" layout="fill" />
             <div className="details">
               <h4>{p.name}</h4>
               <p>
