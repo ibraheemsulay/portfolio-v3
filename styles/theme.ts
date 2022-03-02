@@ -5,7 +5,8 @@ const defaultTheme = {
     navBgCol: "hsla(232, 72%, 22%, 0.859)",
     bgCol: "hsla(207, 56%, 91%, 0.5)",
     textCol: "hsla(232, 72%, 22%, 0.859)",
-    aboutBgCol: "hsla(210, 83%, 98%, 1);",
+    aboutBgCol: "hsla(210, 83%, 98%, 1)",
+    lineCol: "hsla(230, 17%, 67%, 1)",
   },
 };
 

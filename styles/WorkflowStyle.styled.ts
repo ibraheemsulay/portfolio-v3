@@ -18,16 +18,6 @@ export const WorkflowStyle = styled.section<IStyle>`
       padding: 0 100px;
   }
 
-  h3 {
-    &::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 5px;
-      background: green;
-    }
-  }
-
   .wrapper {
     display: flex;
     flex-wrap: wrap;

@@ -13,6 +13,10 @@ import JavascriptIcon from "../assets/svgs/JavascriptIcon";
 import GitIcon from "../assets/svgs/GitIcon";
 import FirebaseIcon from "../assets/svgs/FirebaseIcon";
 import Blob from "../assets/svgs/Blob";
+import GsapIcon from "../assets/svgs/GsapIcon";
+import CypressIcon from "../assets/svgs/CypressIcon";
+import JestIcon from "../assets/svgs/JestIcon";
+import NextjsIcon from "../assets/svgs/NextjsIcon";
 
 const About = () => {
   return (
@@ -67,6 +71,22 @@ const About = () => {
         <div className="icon">
           <FirebaseIcon />
           <h5>FIREBASE</h5>
+        </div>
+        <div className="icon">
+          <GsapIcon />
+          <h5>GSAP ANIMATION</h5>
+        </div>
+        <div className="icon">
+          <CypressIcon />
+          <h5>CYPRESS</h5>
+        </div>
+        <div className="icon">
+          <JestIcon />
+          <h5>JEST</h5>
+        </div>
+        <div className="icon">
+          <NextjsIcon />
+          <h5>NEXT</h5>
         </div>
       </Row>
     </SkillsStyle>

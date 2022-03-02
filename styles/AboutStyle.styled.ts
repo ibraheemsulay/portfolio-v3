@@ -28,13 +28,6 @@ export const AboutStyle = styled(HeroStyle)<IStyle>`
     h3 {
       text-align: center;
       margin: auto;
-      &::after {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 5px;
-        background: green;
-      }
     }
   }
   div.title {

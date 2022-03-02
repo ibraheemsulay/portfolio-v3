@@ -18,14 +18,6 @@ export default styled.section<IStyle>`
     margin: auto;
     text-align: center;
     z-index: 1;
-
-    &::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 5px;
-      background: green;
-    }
   }
 
   div {

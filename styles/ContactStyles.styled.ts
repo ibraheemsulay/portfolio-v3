@@ -12,13 +12,6 @@ export const ContactStyles = styled(Container)<IStyle>`
   h3 {
     width: max-content;
     margin: auto;
-    &::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 5px;
-      background: green;
-    }
   }
 
   footer {

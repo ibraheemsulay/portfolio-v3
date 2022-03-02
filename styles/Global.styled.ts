@@ -61,6 +61,17 @@ h1,
     @media (min-width: 1200px) {
       font-size: 3rem;
     }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 40%;
+      margin: auto;
+      margin-top: 5px;
+      height: 5px;
+      border-radius: 100%;
+      background: ${({ theme }) => theme.theme1.lineCol};
+      }
   }
 
   h4 {
