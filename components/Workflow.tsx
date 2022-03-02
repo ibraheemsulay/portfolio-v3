@@ -1,6 +1,10 @@
 import { WorkflowStyle } from "../styles/WorkflowStyle.styled";
 import { Container } from "../styles/Container.styled";
 import HtmlIcon from "../assets/svgs/HtmlIcon";
+import CommunicationIcon from "../assets/svgs/CommunicationIcon";
+import ProblemSolvingIcon from "../assets/svgs/ProblemSolvingIcon";
+import CriticalThinkingIcon from "../assets/svgs/CriticalThinkingIcon";
+import EmpathyIcon from "../assets/svgs/EmpathyIcon";
 
 const Workflow = () => {
   return (
@@ -9,7 +13,7 @@ const Workflow = () => {
       <div className="wrapper">
         <div className="first-card">
           <div>
-            <HtmlIcon />
+            <ProblemSolvingIcon />
           </div>
           <h4>Problem Solving</h4>
           <p>
@@ -19,7 +23,7 @@ const Workflow = () => {
         </div>
         <div className="second-card">
           <div>
-            <HtmlIcon />
+            <CriticalThinkingIcon />
           </div>
           <h4>Critical Thinking</h4>
           <p>
@@ -29,7 +33,8 @@ const Workflow = () => {
         </div>
         <div className="third-card">
           <div>
-            <HtmlIcon />
+            <CommunicationIcon />
+            {/* <HtmlIcon /> */}
           </div>
           <h4>Communication</h4>
           <p>
@@ -39,7 +44,7 @@ const Workflow = () => {
         </div>
         <div className="fourth-card">
           <div>
-            <HtmlIcon />
+            <EmpathyIcon />
           </div>
           <h4>Empathy</h4>
           <p>

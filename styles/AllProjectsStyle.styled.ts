@@ -5,12 +5,12 @@ import { IStyle } from "../ts-types/styleTypes";
 export const AllProjectsStyle = styled(MainBodyStyle)<IStyle>`
   display: flex;
   flex-direction: column;
-  padding: 100px 0;
+  padding: 50px 0 100px 0;
 
   .container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 
     .title {
       width: 100%;
@@ -30,7 +30,7 @@ export const AllProjectsStyle = styled(MainBodyStyle)<IStyle>`
 
     .card {
       flex-basis: 100%;
-      height: 300px;
+      height: 250px;
       margin-top: 50px;
       position: relative;
       overflow: hidden;
@@ -41,8 +41,8 @@ export const AllProjectsStyle = styled(MainBodyStyle)<IStyle>`
         38px 29px 69px rgba(0, 0, 0, 0.04);
 
       @media (min-width: 768px) {
-        height: 350px;
-        flex-basis: 48%;
+        height: 280px;
+        flex-basis: 40%;
       }
 
       img {

@@ -9,7 +9,7 @@ const AllProjects = () => {
     <AllProjectsStyle>
       <Container className="container">
         <div className="title">
-          <h3>AllProjects</h3>
+          <h3>All Projects</h3>
         </div>
         {projectList.map((p, i) => (
           <div className="card" key={i}>
@@ -23,7 +23,7 @@ const AllProjects = () => {
                 <strong>Tools:</strong> <small>{p.tools}</small>
               </p>
               <div>
-                <a href={p.link}>
+                <a href={p.link} target="_blank" rel="noreferrer">
                   <Button className="btn">View Project</Button>
                 </a>
               </div>

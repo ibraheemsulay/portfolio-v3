@@ -10,6 +10,7 @@ import PersonLogo from "../assets/svgs/PersonLogo";
 import TwitterLogo from "../assets/svgs/TwitterLogo";
 import LetterLogo from "../assets/svgs/Letter";
 import { useState } from "react";
+import Link from "next/link";
 
 const Nav = () => {
   const [toggle, setToggle] = useState(false);
@@ -28,9 +29,11 @@ const Nav = () => {
       </div>
       <ul>
         <li>
-          <a href="#">
-            <HomeLogo /> <span>Home</span>
-          </a>
+          <Link href="/">
+            <a>
+              <HomeLogo /> <span>Home</span>
+            </a>
+          </Link>
         </li>
         <li>
           <a href="#about">
@@ -38,9 +41,11 @@ const Nav = () => {
           </a>
         </li>
         <li>
-          <a href="#projects">
-            <FileLogo /> <span>Projects</span>
-          </a>
+          <Link href="/AllProjects">
+            <a>
+              <FileLogo /> <span>Projects</span>
+            </a>
+          </Link>
         </li>
         <li>
           <a href="#contact">

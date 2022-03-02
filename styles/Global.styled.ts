@@ -27,22 +27,22 @@ body {
 
 h1,
   h2,
-  h3,
+  h3
    {
     text-transform: capitalize;
-    font-size: 2.5rem !important;
+    font-size: 2.5rem;
 
     @media (min-width: 576px) {
-      font-size: 3.5rem !important;
+      font-size: 3.5rem;
     }
     @media (min-width: 768px) {
-      font-size: 2.5rem !important;
+      font-size: 2.5rem;
     }
     @media (min-width: 992px) {
-      font-size: 4rem !important;
+      font-size: 4rem;
     }
     @media (min-width: 1200px) {
-      font-size: 5rem !important;
+      font-size: 5rem;
     }
   }
 
@@ -83,6 +83,7 @@ h1,
 
   p {
     font-size: 1rem;
+    color: rgba(0, 0, 0, 0.868);
 
     @media (min-width: 1024px) {
       font-size: 1.2rem;

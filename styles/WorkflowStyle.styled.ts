@@ -79,32 +79,32 @@ export const WorkflowStyle = styled.section<IStyle>`
       }
     }
 
-    .first-card {
+      .first-card {
         div {
-            background: hsla(240, 100%, 50%, 0.308);
+            background: hsla(120, 95%, 15%, 0.229);
         }
-        border-bottom: 5px solid hsla(240, 100%, 50%, 0.308);
-      }
+        border-bottom: 5px solid hsla(120, 95%, 15%, 0.329);
+      }  
 
       .second-card {
         div {
-            background: hsla(120, 95%, 15%, 0.429);
+            background:hsla(60, 85%, 47%, 0.321); 
         }
-        border-bottom: 5px solid hsla(120, 95%, 15%, 0.329);
+        border-bottom: 5px solid hsla(60, 85%, 47%, 0.521); 
       }
 
       .third-card {
         div {
-            background: hsla(0, 95%, 38%, 0.527);
+            background: hsla(0, 95%, 38%, 0.227);
         }
-        border-bottom: 5px solid hsla(0, 95%, 38%, 0.527);
+        border-bottom: 5px solid hsla(0, 95%, 38%, 0.227);
       }
-      
-      .fourth-card {
-        div {
-            background:hsla(60, 85%, 47%, 0.521); 
-        }
-        border-bottom: 5px solid hsla(60, 85%, 47%, 0.521); 
+
+    .fourth-card {
+      div {
+          background: hsla(240, 100%, 50%, 0.208);
       }
+      border-bottom: 5px solid hsla(240, 100%, 50%, 0.308);
+    }
   }
 `;

@@ -13,9 +13,9 @@ const Projects: React.FC<IProjectsProps> = ({
 }) => {
   return (
     <>
-      <ProjectsStyle i={index}>
+      <ProjectsStyle i={index} className={index === 1 ? "reverse" : ""}>
         <ProjectsImgStyle className="about">
-          <div>
+          <div className="img_container">
             <Image src={image} alt="project landing page view" layout="fill" />
           </div>
         </ProjectsImgStyle>

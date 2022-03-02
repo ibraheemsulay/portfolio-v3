@@ -6,6 +6,7 @@ export const ProjectsStyle = styled(HeroStyle)<IProjectsStyle>`
   position: relative;
   width: 100%;
   margin-top: 150px;
+  margin-bottom: 50px;
 
   @media (min-width: 768px) {
     margin-top: 200px;
@@ -22,7 +23,6 @@ export const ProjectsStyle = styled(HeroStyle)<IProjectsStyle>`
 
     @media (min-width: 768px) {
       padding-top: 50px;
-      ${"" /* flex-direction: row-reverse; */}
     }
   }
 
@@ -35,6 +35,7 @@ export const ProjectsStyle = styled(HeroStyle)<IProjectsStyle>`
       }
     }
   }
+
   div.title {
     padding: 0;
     display: flex;
@@ -48,7 +49,6 @@ export const ProjectsStyle = styled(HeroStyle)<IProjectsStyle>`
     @media (min-width: 1024px) {
       margin-top: 0;
       padding: 0 150px 0 50px;
-      ${"" /* padding: 0 50px 0 150px; */}
     }
 
     h4 {
@@ -78,6 +78,31 @@ export const ProjectsStyle = styled(HeroStyle)<IProjectsStyle>`
 
     button {
       margin-top: 20px;
+    }
+  }
+
+  .reverse {
+    @media (min-width: 768px) {
+      flex-direction: row-reverse;
+
+      div.title {
+        padding: 0 0px 0 30px;
+        }
+  
+        div.img_container {
+           margin-left: -15px;
+        }
+    }
+
+    @media (min-width: 992px){
+
+      div.title {
+        padding: 0 0px 0 150px;
+        }
+  
+        div.img_container {
+          margin-left: -100px;
+        }
     }
   }
 `;

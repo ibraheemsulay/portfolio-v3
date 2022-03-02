@@ -1,6 +1,6 @@
 import { LayoutStyle } from "../styles/LayoutStyle.styled";
 import Nav from "./Navbar";
-import { ReactElement } from "react";
+import { ReactElement, useEffect } from "react";
 import Head from "next/head";
 
 interface ILayout {
@@ -8,6 +8,9 @@ interface ILayout {
 }
 
 const Layout: React.FC<ILayout> = ({ children }) => {
+  useEffect(() => {
+    document.documentElement.style.scrollBehavior = "smooth";
+  });
   return (
     <>
       <Head>
