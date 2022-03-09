@@ -9,6 +9,7 @@ import WhatsappLogo from "../assets/svgs/WhatsappLogo";
 import PersonLogo from "../assets/svgs/PersonLogo";
 import TwitterLogo from "../assets/svgs/TwitterLogo";
 import LetterLogo from "../assets/svgs/Letter";
+import GithubIcon from "../assets/svgs/GithubIcon";
 import { useState } from "react";
 import Link from "next/link";
 
@@ -36,9 +37,11 @@ const Nav = () => {
           </Link>
         </li>
         <li>
-          <a href="#about">
-            <PersonLogo /> <span>About</span>
-          </a>
+          <Link href="/#about">
+            <a>
+              <PersonLogo /> <span>About</span>
+            </a>
+          </Link>
         </li>
         <li>
           <Link href="/AllProjects">
@@ -48,35 +51,57 @@ const Nav = () => {
           </Link>
         </li>
         <li>
-          <a href="#contact">
-            <CallLogo /> <span>Contact</span>
-          </a>
+          <Link href="/#contact">
+            <a>
+              <CallLogo /> <span>Contact</span>
+            </a>
+          </Link>
         </li>
       </ul>
 
       <ul>
         <li>
-          <a href="#">
-            <WhatsappLogo />
+          <a
+            href="https://github.com/ibraheemsulay"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <GithubIcon />
           </a>
         </li>
         <li>
-          <a href="#">
+          <a
+            href="https://www.linkedin.com/in/ibrahim-sule-23478919a"
+            target="_blank"
+            rel="noreferrer"
+          >
             <LinkedinLogo />
           </a>
         </li>
         <li>
-          <a href="#">
+          <a
+            href="mailto:ibraheemsulay@gmail.com"
+            target="_blank"
+            rel="noreferrer"
+          >
             <EmailLogo />
           </a>
         </li>
         <li>
-          <a href="#">
+          <a
+            href="https://www.twitter.com/ibraheemsulay"
+            target="_blank"
+            rel="noreferrer"
+          >
             <TwitterLogo />
           </a>
         </li>
         <li>
-          <a href="#">
+          <a
+            href="https://www.facebook.com/ibraheemsulay/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FacebookLogo />
           </a>
         </li>

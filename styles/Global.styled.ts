@@ -11,10 +11,7 @@ const GlobalStyle = createGlobalStyle<GlobalProps>`
     padding: 0;
     font-family: Open-Sans, Helvetica, Sans-Serif;
     box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -70,7 +67,8 @@ h1,
       margin-top: 5px;
       height: 5px;
       border-radius: 100%;
-      background: ${({ theme }) => theme.theme1.lineCol};
+      background: linear-gradient(to right, ${({ theme }) =>
+        theme.theme1.lineCol}, ${({ theme }) => theme.theme1.navBgCol});
       }
   }
 

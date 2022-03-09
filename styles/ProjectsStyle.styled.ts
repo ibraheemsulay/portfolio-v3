@@ -78,6 +78,12 @@ export const ProjectsStyle = styled(HeroStyle)<IProjectsStyle>`
 
     button {
       margin-top: 20px;
+
+      a {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+      }
     }
   }
 
@@ -94,7 +100,13 @@ export const ProjectsStyle = styled(HeroStyle)<IProjectsStyle>`
         }
     }
 
-    @media (min-width: 992px){
+    @media (min-width: 1024px){
+      div.img_container {
+        margin-left: 20px;
+     }
+    }
+
+    @media (min-width: 1360px){
 
       div.title {
         padding: 0 0px 0 150px;

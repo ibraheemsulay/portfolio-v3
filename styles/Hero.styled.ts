@@ -24,17 +24,6 @@ export const HeroStyle = styled.section<IStyle>`
     margin-top: 50px;
     align-self: center;
 
-    h1:after,
-    p:after {
-      content: " ";
-      position: absolute;
-      z-index: 1;
-      width: 100%;
-      height: 100%;
-      background: inherit;
-      transform-origin: 100% 0;
-    }
-
     @media (min-width: 768px) {
       flex-basis: 50%;
       padding-right: 20px;

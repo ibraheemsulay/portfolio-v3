@@ -5,7 +5,13 @@ import { IStyle } from "../ts-types/styleTypes";
 export const AllProjectsStyle = styled(MainBodyStyle)<IStyle>`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 50px 0 100px 0;
+  min-height: 100vh;
+
+  @media (min-width: 576px) {
+    min-width: 100vw;
+  }
 
   .container {
     display: flex;

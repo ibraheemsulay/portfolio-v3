@@ -27,7 +27,15 @@ const Projects: React.FC<IProjectsProps> = ({
           <p>
             <span>Tools: </span> {tools}
           </p>
-          <Button>GET TO KNOW ME</Button>
+          <Button>
+            <a
+              href="https://sulayibraheem.netlify.app"
+              target="_blank"
+              rel="noreferrer"
+            >
+              VIEW PROJECT
+            </a>
+          </Button>
         </div>
       </ProjectsStyle>
     </>

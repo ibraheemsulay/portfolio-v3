@@ -1,16 +1,10 @@
 import { LayoutStyle } from "../styles/LayoutStyle.styled";
 import Nav from "./Navbar";
-import { ReactElement, useEffect } from "react";
+import { ILayout } from "../ts-types/componentTypes";
 import Head from "next/head";
-
-interface ILayout {
-  children: ReactElement;
-}
+import { gsap } from "gsap";
 
 const Layout: React.FC<ILayout> = ({ children }) => {
-  useEffect(() => {
-    document.documentElement.style.scrollBehavior = "smooth";
-  });
   return (
     <>
       <Head>

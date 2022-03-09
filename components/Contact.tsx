@@ -24,7 +24,10 @@ const Contact = () => {
             Want to have a cup coffee with me while we talk about tech or do you
             have any amazing project you want me to work on?{" "}
           </p>
-          <Button>Email Me</Button>
+
+          <a href="mailto:ibraheemsulay@gmail.com" rel="noreferrer">
+            <Button>Email Me </Button>
+          </a>
         </div>
       </footer>
       <span>&copy; {date.getFullYear()}</span>

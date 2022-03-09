@@ -9,13 +9,13 @@ export const WorkflowStyle = styled.section<IStyle>`
   z-index: 111;
   padding: 0 15px;
 
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     margin-top: 150px;
-      padding: 0 50px;
+    padding: 0 50px;
   }
 
-  @media (min-width: 1024px){
-      padding: 0 100px;
+  @media (min-width: 1024px) {
+    padding: 0 100px;
   }
 
   .wrapper {
@@ -27,20 +27,21 @@ export const WorkflowStyle = styled.section<IStyle>`
 
     & > div {
       margin-top: 30px;
-      background: ${({ theme }) => theme.theme1.aboutBgCol}
+      background: ${({ theme }) => theme.theme1.aboutBgCol};
       border-radius: 10px;
-      box-shadow: 1px -1px 3px hsla(0, 0%, 0%, 0.363), -1px -1px 3px hsla(0, 0%, 0%, 0.063);
+      box-shadow: 1px -1px 3px hsla(0, 0%, 0%, 0.363),
+        -1px -1px 3px hsla(0, 0%, 0%, 0.063);
       border-bottom: 5px solid hsla(240, 100%, 50%, 0.308);
       padding: 2rem 1rem;
       padding-bottom: 2rem;
       width: 70%;
 
-      @media (min-width: 576px){
-          width: 40%;
+      @media (min-width: 576px) {
+        width: 40%;
       }
 
-      @media (min-width: 1240px){
-          width: 20%;
+      @media (min-width: 1240px) {
+        width: 20%;
       }
 
       div {
@@ -69,30 +70,30 @@ export const WorkflowStyle = styled.section<IStyle>`
       }
     }
 
-      .first-card {
-        div {
-            background: hsla(120, 95%, 15%, 0.229);
-        }
-        border-bottom: 5px solid hsla(120, 95%, 15%, 0.329);
-      }  
-
-      .second-card {
-        div {
-            background:hsla(60, 85%, 47%, 0.321); 
-        }
-        border-bottom: 5px solid hsla(60, 85%, 47%, 0.521); 
+    .first-card {
+      div {
+        background: hsla(120, 95%, 15%, 0.229);
       }
+      border-bottom: 5px solid hsla(120, 95%, 15%, 0.329);
+    }
 
-      .third-card {
-        div {
-            background: hsla(0, 95%, 38%, 0.227);
-        }
-        border-bottom: 5px solid hsla(0, 95%, 38%, 0.227);
+    .second-card {
+      div {
+        background: hsla(60, 85%, 47%, 0.321);
       }
+      border-bottom: 5px solid hsla(60, 85%, 47%, 0.521);
+    }
+
+    .third-card {
+      div {
+        background: hsla(0, 95%, 38%, 0.227);
+      }
+      border-bottom: 5px solid hsla(0, 95%, 38%, 0.227);
+    }
 
     .fourth-card {
       div {
-          background: hsla(240, 100%, 50%, 0.208);
+        background: hsla(240, 100%, 50%, 0.208);
       }
       border-bottom: 5px solid hsla(240, 100%, 50%, 0.308);
     }
