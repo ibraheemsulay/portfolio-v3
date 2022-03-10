@@ -10,12 +10,12 @@ const Contact = () => {
       <h3 id="contact">Contact Me</h3>
       <footer>
         <div>
-          <img
+          <Image
             src={img.email}
-            // width="100"
-            // height="100"
+            height="90"
+            width="100"
             alt="contact me picture"
-            // layout="fill"
+            layout="responsive"
           />
         </div>
         <div>

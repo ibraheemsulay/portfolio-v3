@@ -21,6 +21,7 @@ export const ContactStyles = styled(Container)<IStyle>`
     margin: 50px 0;
 
     div {
+      position: relative;
       width: 100%;
 
       @media (min-width: 768px) {
