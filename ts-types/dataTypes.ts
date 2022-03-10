@@ -20,3 +20,22 @@ export interface Paginate {
   pageSize: number;
   pageNumber: number;
 }
+
+export interface IAbout {
+  fields: {
+    about: string;
+    photo: string;
+    cv: {
+      fields: {
+        file: {
+          contentType: string;
+          details: { size: number };
+          fileName: string;
+          url: string;
+        };
+        title: string;
+      };
+    };
+  };
+  [key: string]: any;
+}

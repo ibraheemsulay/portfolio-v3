@@ -8,42 +8,45 @@ import { Row } from "../styles/Row.styled";
 import { Button } from "../styles/Button.styled";
 import Link from "next/link";
 import Image from "next/image";
+import { useInView } from "react-intersection-observer";
+import { IAboutProps } from "../ts-types/componentTypes";
 
 const cvLink =
   "https://drive.google.com/file/d/1HQzRTf-2CH9dqVqSEYUXtzGFaDWDXRKu/view?usp=sharing";
 
-const About: React.FC = () => {
+const About: React.FC<IAboutProps> = ({ about }) => {
+  const [ref, inView] = useInView({
+    threshold: 0,
+  });
+
   return (
     <AboutStyle>
       <Blob />
       <Row id="about">
         <h3>About Me</h3>
       </Row>
-      <HeroStyle>
-        <AboutImgStyle className="about">
-          <div>
-            <Image
-              src={img.avi}
-              alt="ibrahim picture"
-              layout="fill"
-              priority={true}
-            />
+      <div ref={ref} className={`about ${inView ? "el-fadeIn" : "el-fadeOut"}`}>
+        <HeroStyle>
+          <AboutImgStyle className="about">
+            <div>
+              <Image
+                src={about[0].fields.photo}
+                alt="ibrahim picture"
+                layout="fill"
+                priority={true}
+              />
+            </div>
+          </AboutImgStyle>
+          <div className="title">
+            <p>{about[0].fields.about}</p>
+            <Link href={`https:${about[0].fields.cv.fields.file.url}`}>
+              <a>
+                <Button>View CV</Button>
+              </a>
+            </Link>
           </div>
-        </AboutImgStyle>
-        <div className="title">
-          <p>
-            My name is Ibrahim Sule, and I'm a
-            <strong> Front-End Developer</strong> from Lagos, Nigeria. I have an
-            obsession for building pixel perfect user interfaces for the web and
-            I'm looking forward to building yours.
-          </p>
-          <Link href={cvLink}>
-            <a>
-              <Button>View CV</Button>
-            </a>
-          </Link>
-        </div>
-      </HeroStyle>
+        </HeroStyle>
+      </div>
     </AboutStyle>
   );
 };

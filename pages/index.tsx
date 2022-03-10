@@ -23,15 +23,21 @@ export async function getStaticProps() {
   const res = await clients.getEntries({
     content_type: "projects",
   });
+
+  const about = await clients.getEntries({
+    content_type: "about",
+  });
+
   return {
     props: {
       projects: res.items,
+      about: about.items,
     },
     revalidate: 30,
   };
 }
 
-const MainBody: NextPage<IIndexPageProps> = ({ projects }) => {
+const MainBody: NextPage<IIndexPageProps> = ({ projects, about }) => {
   const keyProjects = projects.filter(p => {
     switch (p.fields.title) {
       case "Formpl":
@@ -45,27 +51,26 @@ const MainBody: NextPage<IIndexPageProps> = ({ projects }) => {
     }
   });
 
-  console.log(keyProjects);
   return (
     <div>
       <MainBodyStyle className="main">
         <Container>
           <Hero />
         </Container>
-        <div className="animate">
-          <About />
+        <div>
+          <About about={about} />
         </div>
 
-        <div className="animat">
+        <div className="skills">
           <Skills />
         </div>
-        <div className="animate">
+        <div className="project-layout">
           <ProjectsLayout projects={keyProjects} />
         </div>
-        <div className="animate">
+        <div className="workflow">
           <Workflow />
         </div>
-        <div className="animate">
+        <div className="contact">
           <Contact />
         </div>
       </MainBodyStyle>

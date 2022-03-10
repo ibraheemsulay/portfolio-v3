@@ -98,6 +98,26 @@ h1,
       font-size: 1.2rem;
     }
   }
+
+  .skills {
+    display: flex;
+    padding: 0 -15px;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .el-fadeIn {
+
+    opacity: 1 !important;
+    transition: all .5s ease-in;
+
+  }
+
+  .el-fadeOut {
+      opacity: 0 !important;
+      transition: all .5s ease-in;
+
+  }
 `;
 
 export default GlobalStyle;

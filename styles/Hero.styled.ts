@@ -23,6 +23,7 @@ export const HeroStyle = styled.section<IStyle>`
     order: 2;
     margin-top: 50px;
     align-self: center;
+    position: relative;
 
     @media (min-width: 768px) {
       flex-basis: 50%;
@@ -40,5 +41,37 @@ export const HeroStyle = styled.section<IStyle>`
     font-size: 1.2rem;
     font-weight: bold;
     color: rgba(0, 0, 0, 0.868);
+  }
+
+  .hero_title,
+  .description {
+    visibility: hidden;
+    position: relative;
+  }
+
+  @keyframes drop {
+    from {
+      visibility: visible;
+      right: 150%;
+    }
+    to {
+      visibility: visible;
+      right: 0;
+    }
+  }
+
+  .hero_title {
+    animation-name: drop;
+    animation-duration: 1s;
+    animation-delay: 0.75s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  .description {
+    animation-name: drop;
+    animation-duration: 1s;
+    animation-delay: 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
   }
 `;

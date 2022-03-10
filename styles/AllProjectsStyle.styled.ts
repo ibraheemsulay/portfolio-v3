@@ -27,8 +27,19 @@ export const AllProjectsStyle = styled(MainBodyStyle)<IStyle>`
       }
     }
 
+    @keyframes fade {
+      from {
+        transform: scale(0.95);
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
     .card {
       flex-basis: 100%;
+      opacity: 0;
       height: 250px;
       margin-top: 50px;
       position: relative;
@@ -38,6 +49,10 @@ export const AllProjectsStyle = styled(MainBodyStyle)<IStyle>`
       box-shadow: 2.5px 1.9px 4.6px rgba(0, 0, 0, 0.016),
         8.5px 6.5px 15.4px rgba(0, 0, 0, 0.024),
         38px 29px 69px rgba(0, 0, 0, 0.04);
+      animation-name: fade;
+      animation-duration: 0.75s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
 
       @media (min-width: 768px) {
         height: 280px;

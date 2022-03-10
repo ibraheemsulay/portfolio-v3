@@ -9,6 +9,7 @@ export default styled.section<IStyle>`
   padding-top: 100px;
   overflow-x: clip;
   background: hsla(210, 83%, 98%, 1);
+  margin-bottom: -20px;
 
   @media (min-width: 768px) {
     padding-top: 50px;
@@ -24,10 +25,7 @@ export default styled.section<IStyle>`
     flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 20px;
-
-    @media (min-width: 576px) {
-      margin-top: 50px;
-    }
+    margin-bottom: 20px;
   }
 
   .icon {
@@ -63,10 +61,14 @@ export default styled.section<IStyle>`
     position: absolute;
     width: 120%;
     height: 100%;
-    bottom: -20%;
+    bottom: -13%;
     left: -10%;
     color: ${({ theme }) => theme.theme1.aboutBgCol};
     transform: rotateX(180deg);
     transform: rotateZ(180deg);
+
+    @media (min-width: 768px) {
+      bottom: -20%;
+    }
   }
 `;

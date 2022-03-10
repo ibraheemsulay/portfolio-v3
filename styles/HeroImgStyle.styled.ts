@@ -39,4 +39,25 @@ export const HeroImgStyle = styled.div<IStyle>`
       background: white;
     }
   }
+  .img-wrapper-animate {
+    visibility: hidden;
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-delay: 2.25s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes rotate {
+    from {
+      visibility: visible;
+      left: 150%;
+      transform: rotateZ(480deg);
+    }
+    to {
+      visibility: visible;
+      left: 0;
+      transform: rotateZ(0deg);
+    }
+  }
 `;

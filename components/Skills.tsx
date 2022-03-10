@@ -17,76 +17,87 @@ import GsapIcon from "../assets/svgs/GsapIcon";
 import CypressIcon from "../assets/svgs/CypressIcon";
 import JestIcon from "../assets/svgs/JestIcon";
 import NextjsIcon from "../assets/svgs/NextjsIcon";
+import { useInView } from "react-intersection-observer";
 
 const About = () => {
+  const [ref, inView] = useInView({
+    threshold: 0,
+  });
+
   return (
     <SkillsStyle>
-      <h3>My Skills</h3>
+      <h3 id="skills">My Skills</h3>
+
       <Row>
         <Blob />
-        <div className="icon">
-          <CssIcon />
-          <h5>CSS</h5>
-        </div>
-        <div className="icon">
-          <HtmlIcon />
-          <h5>HTML</h5>
-        </div>
-        <div className="icon">
-          <SassIcon />
-          <h5>SASS</h5>
-        </div>
-        <div className="icon">
-          <TypescriptIcon />
-          <h5>TYPESCRIPT</h5>
-        </div>
-        <div className="icon">
-          <TailwindIcon />
-          <h5>TAILWIND</h5>
-        </div>
-        <div className="icon">
-          <ReactIcon />
-          <h5>REACT</h5>
-        </div>
-        <div className="icon">
-          <NuxtIcon />
-          <h5>NUXT</h5>
-        </div>
-        <div className="icon">
-          <BootstrapIcon />
-          <h5>BOOTSTRAP</h5>
-        </div>
-        <div className="icon">
-          <VueIcon />
-          <h5>VUE</h5>
-        </div>
-        <div className="icon">
-          <JavascriptIcon />
-          <h5>JAVASCRIPT</h5>
-        </div>
-        <div className="icon">
-          <GitIcon />
-          <h5>GIT</h5>
-        </div>
-        <div className="icon">
-          <FirebaseIcon />
-          <h5>FIREBASE</h5>
-        </div>
-        <div className="icon">
-          <GsapIcon />
-          <h5>GSAP ANIMATION</h5>
-        </div>
-        <div className="icon">
-          <CypressIcon />
-          <h5>CYPRESS</h5>
-        </div>
-        <div className="icon">
-          <JestIcon />
-          <h5>JEST</h5>
-        </div>
-        <div className="icon">
-          <NextjsIcon />
-          <h5>NEXT</h5>
+        <div
+          ref={ref}
+          className={` skills ${inView ? "el-fadeIn" : "el-fadeOut"}`}
+        >
+          <div className="icon">
+            <CssIcon />
+            <h5>CSS</h5>
+          </div>
+          <div className="icon">
+            <HtmlIcon />
+            <h5>HTML</h5>
+          </div>
+          <div className="icon">
+            <SassIcon />
+            <h5>SASS</h5>
+          </div>
+          <div className="icon">
+            <TypescriptIcon />
+            <h5>TYPESCRIPT</h5>
+          </div>
+          <div className="icon">
+            <TailwindIcon />
+            <h5>TAILWIND</h5>
+          </div>
+          <div className="icon">
+            <ReactIcon />
+            <h5>REACT</h5>
+          </div>
+          <div className="icon">
+            <NuxtIcon />
+            <h5>NUXT</h5>
+          </div>
+          <div className="icon">
+            <BootstrapIcon />
+            <h5>BOOTSTRAP</h5>
+          </div>
+          <div className="icon">
+            <VueIcon />
+            <h5>VUE</h5>
+          </div>
+          <div className="icon">
+            <JavascriptIcon />
+            <h5>JAVASCRIPT</h5>
+          </div>
+          <div className="icon">
+            <GitIcon />
+            <h5>GIT</h5>
+          </div>
+          <div className="icon">
+            <FirebaseIcon />
+            <h5>FIREBASE</h5>
+          </div>
+          <div className="icon">
+            <GsapIcon />
+            <h5>GSAP ANIMATION</h5>
+          </div>
+          <div className="icon">
+            <CypressIcon />
+            <h5>CYPRESS</h5>
+          </div>
+          <div className="icon">
+            <JestIcon />
+            <h5>JEST</h5>
+          </div>
+          <div className="icon">
+            <NextjsIcon />
+            <h5>NEXT</h5>
+          </div>
         </div>
       </Row>
     </SkillsStyle>

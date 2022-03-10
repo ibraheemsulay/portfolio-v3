@@ -5,7 +5,7 @@ import FacebookLogo from "../assets/svgs/FacebookLogo";
 import FileLogo from "../assets/svgs/FileLogo";
 import LinkedinLogo from "../assets/svgs/LinkedinLogo";
 import HomeLogo from "../assets/svgs/HomeLogo";
-import WhatsappLogo from "../assets/svgs/WhatsappLogo";
+import SkillsLogo from "../assets/svgs/SkillsLogo";
 import PersonLogo from "../assets/svgs/PersonLogo";
 import TwitterLogo from "../assets/svgs/TwitterLogo";
 import LetterLogo from "../assets/svgs/Letter";
@@ -40,6 +40,13 @@ const Nav = () => {
           <Link href="/#about">
             <a>
               <PersonLogo /> <span>About</span>
+            </a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/#skills">
+            <a>
+              <SkillsLogo /> <span>Skills</span>
             </a>
           </Link>
         </li>

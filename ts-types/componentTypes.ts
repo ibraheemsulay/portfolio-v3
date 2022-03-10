@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { IProject } from "./dataTypes";
+import { IProject, IAbout } from "./dataTypes";
 import { Dispatch, SetStateAction } from "react";
 
 export interface IProjectsProps {
@@ -8,6 +8,7 @@ export interface IProjectsProps {
   summary: string;
   tools: string;
   index: number;
+  link: string;
 }
 
 export interface ILayout {
@@ -20,10 +21,15 @@ export interface IAllProjectsProps extends ILayout {
 
 export interface IIndexPageProps extends ILayout {
   projects: IProject[];
+  about: any;
 }
 
 export interface IPaginationProps {
   number: number;
   numOfPages: number;
   setNumber: Dispatch<SetStateAction<number>>;
+}
+
+export interface IAboutProps extends ILayout {
+  about: IAbout[];
 }

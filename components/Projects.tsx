@@ -4,17 +4,13 @@ import { Button } from "../styles/Button.styled";
 import { IProjectsProps } from "../ts-types/componentTypes";
 import Image from "next/image";
 
-const Projects: React.FC<IProjectsProps> = ({
-  title,
-  image,
-  summary,
-  tools,
-  index,
-}) => {
+const Projects: React.FC<IProjectsProps> = props => {
+  const { title, image, summary, tools, index, link } = props;
+
   return (
     <>
       <ProjectsStyle i={index} className={index === 1 ? "reverse" : ""}>
-        <ProjectsImgStyle className="about">
+        <ProjectsImgStyle className="">
           <div className="img_container">
             <Image src={image} alt="project landing page view" layout="fill" />
           </div>
@@ -28,11 +24,7 @@ const Projects: React.FC<IProjectsProps> = ({
             <span>Tools: </span> {tools}
           </p>
           <Button>
-            <a
-              href="https://sulayibraheem.netlify.app"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href={link} target="_blank" rel="noreferrer">
               VIEW PROJECT
             </a>
           </Button>
