@@ -13,7 +13,10 @@ const GlobalStyle = createGlobalStyle<GlobalProps>`
     font-family: Open-Sans, Helvetica, Sans-Serif;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none; 
 }
+*::-webkit-scrollbar { width: 0 !important }
 
 body {
     width: 100vw;

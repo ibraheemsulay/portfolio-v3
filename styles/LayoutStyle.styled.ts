@@ -11,15 +11,17 @@ export const LayoutStyle = styled(Row)<IStyle>`
     top: 2%;
     right: 5%;
     outline: none;
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
     overflow: hidden;
     background: transparent;
     cursor: pointer;
 
     span {
-      display: inline-block;
-      padding: 0.3rem 0.5rem;
+      display: block;
+      padding: 0.1rem 0.3rem;
+      font-size: 0.6rem;
+      font-weight: bold;
       background: #c1d16a;
     }
     .light {

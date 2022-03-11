@@ -2,7 +2,6 @@ import { LayoutStyle } from "../styles/LayoutStyle.styled";
 import Nav from "./Navbar";
 import { ILayout } from "../ts-types/componentTypes";
 import Head from "next/head";
-import { useState, cloneElement } from "react";
 import { useContext } from "react";
 import { Context } from "../assets/Context";
 
