@@ -45,9 +45,9 @@ const MainBody: NextPage<IIndexPageProps> = ({ projects, about }) => {
     switch (p.fields.title) {
       case "Formpl":
         return true;
-      case "Github Trends":
+      case "Github Trends Page":
         return true;
-      case "Covid Stats":
+      case "Covid Statistics":
         return true;
       default:
         return false;
