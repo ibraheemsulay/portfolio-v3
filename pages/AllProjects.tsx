@@ -5,9 +5,11 @@ import type { NextPage } from "next";
 import { IAllProjectsProps } from "../ts-types/componentTypes";
 import Image from "next/image";
 import { createClient } from "contentful";
-import { IProject, Paginate } from "../ts-types/dataTypes";
+import { Paginate } from "../ts-types/dataTypes";
 import { useState, useEffect } from "react";
 import Pagination from "../components/Pagination";
+import { useContext } from "react";
+import { Context } from "../assets/Context";
 
 const id = process.env.CONTENTFUL_SPACE_ID,
   token = process.env.CONTENTFUL_TOKEN;
@@ -43,8 +45,12 @@ export async function getStaticProps() {
 }
 
 const AllProjects: NextPage<IAllProjectsProps> = ({ projects }) => {
+  const { darkmode } = useContext(Context);
+
   const [number, setNumber] = useState(1);
+
   const numOfPages = Math.ceil(projects.length / 4);
+
   const [projectsToShow, setProjectsToShow] = useState<any>([]);
 
   useEffect(() => {
@@ -57,7 +63,7 @@ const AllProjects: NextPage<IAllProjectsProps> = ({ projects }) => {
   }, [projects, number]);
 
   return (
-    <AllProjectsStyle>
+    <AllProjectsStyle darkMode={darkmode}>
       <Container className="container">
         <div className="title">
           <h3>All Projects</h3>

@@ -9,6 +9,8 @@ import Workflow from "../components/Workflow";
 import Contact from "../components/Contact";
 import { createClient } from "contentful";
 import { IIndexPageProps } from "../ts-types/componentTypes";
+import { Context } from "../assets/Context";
+import { useContext } from "react";
 
 const id = process.env.CONTENTFUL_SPACE_ID,
   token = process.env.CONTENTFUL_TOKEN;
@@ -38,6 +40,7 @@ export async function getStaticProps() {
 }
 
 const MainBody: NextPage<IIndexPageProps> = ({ projects, about }) => {
+  const { darkmode } = useContext(Context);
   const keyProjects = projects.filter(p => {
     switch (p.fields.title) {
       case "Formpl":
@@ -53,7 +56,7 @@ const MainBody: NextPage<IIndexPageProps> = ({ projects, about }) => {
 
   return (
     <div>
-      <MainBodyStyle className="main">
+      <MainBodyStyle className="main" darkMode={darkmode}>
         <Container>
           <Hero />
         </Container>

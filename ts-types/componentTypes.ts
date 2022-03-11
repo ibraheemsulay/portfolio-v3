@@ -13,6 +13,7 @@ export interface IProjectsProps {
 
 export interface ILayout {
   children?: ReactElement;
+  darkMode?: boolean;
 }
 
 export interface IAllProjectsProps extends ILayout {
@@ -33,3 +34,6 @@ export interface IPaginationProps {
 export interface IAboutProps extends ILayout {
   about: IAbout[];
 }
+
+export interface ISkillsProps extends ILayout {}
+export interface IHeroProps extends ILayout {}

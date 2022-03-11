@@ -39,3 +39,8 @@ export interface IAbout {
   };
   [key: string]: any;
 }
+
+export interface IContext {
+  darkmode: boolean;
+  toggleDarkmode: () => void;
+}

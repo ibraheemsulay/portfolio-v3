@@ -7,7 +7,8 @@ export const AboutStyle = styled(HeroStyle)<IStyle>`
   width: 100%;
   margin-top: 200px;
   overflow-x: clip;
-  background: ${({ theme }) => theme.theme1.aboutBgCol};
+  background: ${({ theme, darkMode }) =>
+    darkMode ? theme.theme2.aboutBgCol : theme.theme1.aboutBgCol};
 
   @media (min-width: 768px) {
     margin-top: 200px;
@@ -51,6 +52,7 @@ export const AboutStyle = styled(HeroStyle)<IStyle>`
     height: 100%;
     top: -20%;
     left: -10%;
-    color: ${({ theme }) => theme.theme1.aboutBgCol};
+    color: ${({ theme, darkMode }) =>
+      darkMode ? theme.theme2.aboutBgCol : theme.theme1.aboutBgCol};
   }
 `;

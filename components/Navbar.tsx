@@ -12,18 +12,24 @@ import LetterLogo from "../assets/svgs/Letter";
 import GithubIcon from "../assets/svgs/GithubIcon";
 import { useState } from "react";
 import Link from "next/link";
+import { useContext } from "react";
+import { Context } from "../assets/Context";
 
 const Nav = () => {
   const [toggle, setToggle] = useState(false);
 
   const trueToggler = () => setToggle(true);
+
   const falseToggler = () => setToggle(false);
+
+  const { darkmode } = useContext(Context);
 
   return (
     <Navbar
       toggle={toggle}
       onMouseEnter={trueToggler}
       onMouseLeave={falseToggler}
+      darkMode={darkmode}
     >
       <div>
         <LetterLogo />

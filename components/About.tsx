@@ -10,17 +10,18 @@ import Link from "next/link";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 import { IAboutProps } from "../ts-types/componentTypes";
-
-const cvLink =
-  "https://drive.google.com/file/d/1HQzRTf-2CH9dqVqSEYUXtzGFaDWDXRKu/view?usp=sharing";
+import { useContext } from "react";
+import { Context } from "../assets/Context";
 
 const About: React.FC<IAboutProps> = ({ about }) => {
   const [ref, inView] = useInView({
     threshold: 0,
   });
 
+  const { darkmode } = useContext(Context);
+
   return (
-    <AboutStyle>
+    <AboutStyle darkMode={darkmode}>
       <Blob />
       <Row id="about">
         <h3>About Me</h3>

@@ -4,14 +4,18 @@ import ProblemSolvingIcon from "../assets/svgs/ProblemSolvingIcon";
 import CriticalThinkingIcon from "../assets/svgs/CriticalThinkingIcon";
 import EmpathyIcon from "../assets/svgs/EmpathyIcon";
 import { useInView } from "react-intersection-observer";
+import { useContext } from "react";
+import { Context } from "../assets/Context";
 
 const Workflow = () => {
+  const { darkmode } = useContext(Context);
+
   const [ref, inView] = useInView({
     threshold: 0,
   });
 
   return (
-    <WorkflowStyle>
+    <WorkflowStyle darkMode={darkmode}>
       <h3>Work flow</h3>
       <div ref={ref} className={` ${inView ? "el-fadeIn" : "el-fadeOut"}`}>
         <div className="wrapper">

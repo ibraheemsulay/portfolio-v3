@@ -7,6 +7,8 @@ export const PaginationStyle = styled(Container)`
     display: flex;
     justify-content: center;
     font-size: 1rem;
+    color: ${({ darkMode }) =>
+      darkMode ? "rgba(255, 255, 255, 0.868)" : "rgba(0, 0, 0, 0.868)"};
 
     button {
     margin-right: 10px;
@@ -16,6 +18,8 @@ export const PaginationStyle = styled(Container)`
       background: none;
       font-size: 1rem;
       cursor: pointer;
+      color: ${({ darkMode }) =>
+        darkMode ? "rgba(255, 255, 255, 0.868)" : "rgba(0, 0, 0, 0.868)"};
       transition: all 0.2s ease-in;
 
       &:hover {
@@ -29,7 +33,8 @@ export const PaginationStyle = styled(Container)`
     }
 
     span {
-      border: 2px solid black;
+      border: 2px solid ${({ darkMode }) =>
+        darkMode ? "rgba(255, 255, 255, 0.868)" : "rgba(0, 0, 0, 0.868)"};;
       border-radius: 5px;
       padding: 0.2rem 0.6rem;
     }

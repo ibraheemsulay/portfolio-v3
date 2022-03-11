@@ -8,7 +8,8 @@ export default styled.section<IStyle>`
   width: 100%;
   padding-top: 100px;
   overflow-x: clip;
-  background: hsla(210, 83%, 98%, 1);
+  background: ${({ theme, darkMode }) =>
+    darkMode ? theme.theme2.aboutBgCol : theme.theme1.aboutBgCol};
   margin-bottom: -20px;
 
   @media (min-width: 768px) {
@@ -63,7 +64,8 @@ export default styled.section<IStyle>`
     height: 100%;
     bottom: -13%;
     left: -10%;
-    color: ${({ theme }) => theme.theme1.aboutBgCol};
+    color: ${({ theme, darkMode }) =>
+      darkMode ? theme.theme2.aboutBgCol : theme.theme1.aboutBgCol};
     transform: rotateX(180deg);
     transform: rotateZ(180deg);
 

@@ -74,7 +74,8 @@ export const AllProjectsStyle = styled(MainBodyStyle)<IStyle>`
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        background: ${({ theme }) => theme.theme1.aboutBgCol};
+        background: ${({ theme, darkMode }) =>
+          darkMode ? theme.theme2.aboutBgCol : theme.theme1.aboutBgCol};
         border-top: 1px solid black;
         transform: translateY(200%);
         z-index: 2;

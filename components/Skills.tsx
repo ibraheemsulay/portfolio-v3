@@ -18,14 +18,18 @@ import CypressIcon from "../assets/svgs/CypressIcon";
 import JestIcon from "../assets/svgs/JestIcon";
 import NextjsIcon from "../assets/svgs/NextjsIcon";
 import { useInView } from "react-intersection-observer";
+import { ISkillsProps } from "../ts-types/componentTypes";
+import { useContext } from "react";
+import { Context } from "../assets/Context";
 
-const About = () => {
+const Skills: React.FC<ISkillsProps> = () => {
+  const { darkmode } = useContext(Context);
   const [ref, inView] = useInView({
     threshold: 0,
   });
 
   return (
-    <SkillsStyle>
+    <SkillsStyle darkMode={darkmode}>
       <h3 id="skills">My Skills</h3>
 
       <Row>
@@ -104,4 +108,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Skills;

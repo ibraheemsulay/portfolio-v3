@@ -40,7 +40,6 @@ export const HeroStyle = styled.section<IStyle>`
     margin-top: 20px;
     font-size: 1.2rem;
     font-weight: bold;
-    color: rgba(0, 0, 0, 0.868);
   }
 
   .hero_title,

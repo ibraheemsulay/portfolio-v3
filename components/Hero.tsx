@@ -1,11 +1,13 @@
 import { HeroStyle } from "../styles/Hero.styled";
 import { HeroImgStyle } from "../styles/HeroImgStyle.styled";
 import Image from "next/image";
+import images from "../assets/img/image";
+import { IHeroProps } from "../ts-types/componentTypes";
 
-const Hero: React.FC = () => {
+const Hero: React.FC<IHeroProps> = ({ darkMode }) => {
   return (
     <div className="hero-component">
-      <HeroStyle>
+      <HeroStyle darkMode={darkMode}>
         <div className="title">
           <h1 className="hero_title">Hi, My name is ibrahim</h1>
           <p className="description">
@@ -14,13 +16,7 @@ const Hero: React.FC = () => {
         </div>
         <HeroImgStyle>
           <div className="img_wrapper img-wrapper-animate">
-            <Image
-              src={
-                "https://res.cloudinary.com/ibraheemsulay/image/upload/v1645458443/emoji_esscto.png"
-              }
-              alt="avi"
-              layout="fill"
-            />
+            <Image src={images.emoji} alt="avi" layout="fill" />
           </div>
         </HeroImgStyle>
       </HeroStyle>

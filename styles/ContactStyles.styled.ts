@@ -40,7 +40,6 @@ export const ContactStyles = styled(Container)<IStyle>`
   }
 
   p {
-    color: black;
     margin-top: 30px;
   }
   span {

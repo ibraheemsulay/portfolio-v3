@@ -1,6 +1,11 @@
 import { IPaginationProps } from "../ts-types/componentTypes";
 import { PaginationStyle } from "../styles/PaginationStyle.styled";
+import { useContext } from "react";
+import { Context } from "../assets/Context";
+
 const Pagination: React.FC<IPaginationProps> = props => {
+  const { darkmode } = useContext(Context);
+
   const { numOfPages, number, setNumber } = props;
 
   const increment = () => {
@@ -12,7 +17,7 @@ const Pagination: React.FC<IPaginationProps> = props => {
   };
 
   return (
-    <PaginationStyle>
+    <PaginationStyle darkMode={darkmode}>
       {numOfPages > 0 && (
         <>
           <button disabled={number > 1 ? false : true} onClick={decrement}>

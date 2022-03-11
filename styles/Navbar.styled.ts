@@ -8,8 +8,10 @@ export const Navbar = styled.nav<INavbarStyle>`
   flex: 0 0;
   flex-direction: column;
   flex-basis: ${({ toggle }) => (toggle ? "100px" : "50px")};
-  background: ${({ theme }) => theme.theme1.navBgCol};
-  color: ${({ theme }) => theme.theme1.navTextCol};
+  background: ${({ theme, darkMode }) =>
+    darkMode ? theme.theme2.navBgCol : theme.theme1.navBgCol};
+  color: ${({ theme, darkMode }) =>
+    darkMode ? theme.theme2.navTextCol : theme.theme1.navTextCol};
   height: 100vh;
   max-height: 100vh;
   justify-content: space-between;
@@ -25,7 +27,8 @@ export const Navbar = styled.nav<INavbarStyle>`
     padding-inline-start: 0;
     li {
       a {
-        color: ${({ theme }) => theme.theme1.navTextCol};
+        color: ${({ theme, darkMode }) =>
+          darkMode ? theme.theme2.navTextCol : theme.theme1.navTextCol};
         text-decoration: none;
         display: flex;
         padding: 10px 5px;

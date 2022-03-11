@@ -3,6 +3,7 @@ import { ThemeType } from "./theme";
 
 interface GlobalProps {
   theme: ThemeType;
+  darkMode: boolean;
 }
 
 const GlobalStyle = createGlobalStyle<GlobalProps>`
@@ -11,6 +12,7 @@ const GlobalStyle = createGlobalStyle<GlobalProps>`
     padding: 0;
     font-family: Open-Sans, Helvetica, Sans-Serif;
     box-sizing: border-box;
+    transition: all .3s ease-in;
     scroll-behavior: smooth;
 }
 
@@ -92,7 +94,8 @@ h1,
 
   p {
     font-size: 1rem;
-    color: rgba(0, 0, 0, 0.868);
+    color: ${({ darkMode }) =>
+      darkMode ? "rgba(255, 255, 255, 0.868)" : "rgba(0, 0, 0, 0.868)"};
 
     @media (min-width: 1024px) {
       font-size: 1.2rem;
@@ -107,15 +110,12 @@ h1,
   }
 
   .el-fadeIn {
-
-    opacity: 1 !important;
-    transition: all .5s ease-in;
-
+    opacity: 1;
   }
 
   .el-fadeOut {
-      opacity: 0 !important;
-      transition: all .5s ease-in;
+      opacity: 0;
+
 
   }
 `;
