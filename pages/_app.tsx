@@ -4,12 +4,18 @@ import theme from "../styles/theme";
 import GlobalStyle from "../styles/Global.styled";
 import Layout from "../components/Layout";
 import { Context } from "../assets/Context";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface CustomAppProps extends AppProps {}
 
 const MyApp: React.FC<CustomAppProps> = ({ Component, pageProps }) => {
   const [darkmode, setDarkmode] = useState(false);
+
+  useEffect(() => {
+    let matched = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (matched) setDarkmode(() => !darkmode);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const toggleDarkmode = () => setDarkmode(val => !val);
   return (
