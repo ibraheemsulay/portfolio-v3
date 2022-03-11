@@ -4,17 +4,20 @@ import { IStyle } from "../ts-types/styleTypes";
 
 export const AllProjectsStyle = styled(MainBodyStyle)<IStyle>`
   display: flex;
+  min-width: 100vw;
+  margin: 0;
   flex-direction: column;
   justify-content: space-between;
-  padding: 50px 0 100px 0;
+  padding: 50px 0 100px 50px;
   min-height: 100vh;
 
   @media (min-width: 576px) {
-    min-width: 100vw;
+    padding: 50px 50px 100px;
   }
 
   .container {
     display: flex;
+    flex-basis: 100%;
     flex-wrap: wrap;
     justify-content: space-around;
 
