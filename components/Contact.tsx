@@ -28,8 +28,9 @@ const Contact = () => {
         <div>
           <h4>Reach out in one click</h4>
           <p>
-            Want to have a cup coffee with me while we talk about tech or do you
-            have any amazing project you want me to work on?{" "}
+            Want to have a cup of coffee with me while we talk about building
+            your amazing project ideas? Or do you have other opportunities you
+            would like to share with me?
           </p>
 
           <a href="mailto:ibraheemsulay@gmail.com" rel="noreferrer">
