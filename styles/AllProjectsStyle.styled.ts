@@ -12,7 +12,7 @@ export const AllProjectsStyle = styled(MainBodyStyle)<IStyle>`
   min-height: 100vh;
 
   @media (min-width: 576px) {
-    padding: 50px 50px 100px;
+    padding: 50px 15px 100px 50px;
   }
 
   .container {
