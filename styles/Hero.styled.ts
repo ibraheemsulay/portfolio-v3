@@ -40,6 +40,7 @@ export const HeroStyle = styled.section<IStyle>`
     margin-top: 20px;
     font-size: 1.2rem;
     font-weight: bold;
+    transition: color 0.3s ease-in;
   }
 
   .hero_title,
@@ -66,6 +67,7 @@ export const HeroStyle = styled.section<IStyle>`
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
   }
+
   .description {
     animation-name: drop;
     animation-duration: 1s;

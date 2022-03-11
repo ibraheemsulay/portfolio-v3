@@ -12,7 +12,6 @@ const GlobalStyle = createGlobalStyle<GlobalProps>`
     padding: 0;
     font-family: Open-Sans, Helvetica, Sans-Serif;
     box-sizing: border-box;
-    transition: all .3s ease-in;
     scroll-behavior: smooth;
 }
 
@@ -30,6 +29,7 @@ h1,
    {
     text-transform: capitalize;
     font-size: 2.5rem;
+    transition: color .3s ease-in;
 
     @media (min-width: 576px) {
       font-size: 3.5rem;

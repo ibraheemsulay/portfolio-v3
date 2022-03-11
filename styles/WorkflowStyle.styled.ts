@@ -29,6 +29,7 @@ export const WorkflowStyle = styled.section<IStyle>`
       margin-top: 30px;
       background: ${({ theme, darkMode }) =>
         darkMode ? theme.theme2.aboutBgCol : theme.theme1.aboutBgCol};
+      transition: background-color 0.3s ease-in;
       border-radius: 10px;
       box-shadow: 1px -1px 3px hsla(0, 0%, 0%, 0.363),
         -1px -1px 3px hsla(0, 0%, 0%, 0.063);

@@ -9,6 +9,7 @@ export const AboutStyle = styled(HeroStyle)<IStyle>`
   overflow-x: clip;
   background: ${({ theme, darkMode }) =>
     darkMode ? theme.theme2.aboutBgCol : theme.theme1.aboutBgCol};
+  transition: background-color 0.3s ease-in;
 
   @media (min-width: 768px) {
     margin-top: 200px;
@@ -54,5 +55,6 @@ export const AboutStyle = styled(HeroStyle)<IStyle>`
     left: -10%;
     color: ${({ theme, darkMode }) =>
       darkMode ? theme.theme2.aboutBgCol : theme.theme1.aboutBgCol};
+    transition: color 0.3s ease-in;
   }
 `;

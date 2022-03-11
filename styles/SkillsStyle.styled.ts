@@ -10,6 +10,7 @@ export default styled.section<IStyle>`
   overflow-x: clip;
   background: ${({ theme, darkMode }) =>
     darkMode ? theme.theme2.aboutBgCol : theme.theme1.aboutBgCol};
+  transition: background-color 0.3s ease-in;
   margin-bottom: -20px;
 
   @media (min-width: 768px) {
@@ -66,6 +67,7 @@ export default styled.section<IStyle>`
     left: -10%;
     color: ${({ theme, darkMode }) =>
       darkMode ? theme.theme2.aboutBgCol : theme.theme1.aboutBgCol};
+    transition: color 0.3s ease-in;
     transform: rotateX(180deg);
     transform: rotateZ(180deg);
 

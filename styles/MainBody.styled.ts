@@ -3,6 +3,7 @@ import { IStyle } from "../ts-types/styleTypes";
 
 export const MainBodyStyle = styled.main<IStyle>`
   margin-left: 50px;
+  transition: background-color 0.3s ease-in;
   background: ${({ theme, darkMode }) =>
     darkMode ? theme.theme2.bgCol : theme.theme1.bgCol};
   color: ${({ theme, darkMode }) =>
