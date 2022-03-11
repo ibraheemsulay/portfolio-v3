@@ -35,7 +35,6 @@ export async function getStaticProps() {
       projects: res.items,
       about: about.items,
     },
-    revalidate: 30,
   };
 }
 

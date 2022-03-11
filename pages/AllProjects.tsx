@@ -40,7 +40,6 @@ export async function getStaticProps() {
     props: {
       projects: res.items.reverse(),
     },
-    revalidate: 30,
   };
 }
 
