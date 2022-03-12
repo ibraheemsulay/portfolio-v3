@@ -35,7 +35,6 @@ export const HeroImgStyle = styled.div<IStyle>`
       height: 100%;
       opacity: 0.6;
       object-fit: contain;
-      filter: grayscale(100%);
       background: white;
     }
   }
