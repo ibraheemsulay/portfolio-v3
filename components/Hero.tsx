@@ -11,12 +11,12 @@ const Hero: React.FC<IHeroProps> = ({ darkMode }) => {
         <div className="title">
           <h1 className="hero_title">Hi, My name is ibrahim</h1>
           <p className="description">
-            I am a frontend developer from Lagos, Nigeria.
+            I am a Front-end Developer from Lagos, Nigeria.
           </p>
         </div>
         <HeroImgStyle>
           <div className="img_wrapper img-wrapper-animate">
-            <Image src={images.emoji} alt="avi" layout="fill" />
+            <Image src={images.avi} alt="avi" layout="fill" />
           </div>
         </HeroImgStyle>
       </HeroStyle>

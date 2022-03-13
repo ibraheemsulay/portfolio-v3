@@ -45,7 +45,7 @@ export async function getStaticProps() {
 }
 
 const AllProjects: NextPage<IAllProjectsProps> = ({ projects }) => {
-  const { darkmode } = useContext(Context);
+  const { darkmode, setToggle } = useContext(Context);
 
   const [number, setNumber] = useState(1);
 

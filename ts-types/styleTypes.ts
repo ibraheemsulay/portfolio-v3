@@ -12,3 +12,8 @@ export interface IProjectsStyle extends IStyle {
 export interface INavbarStyle extends IStyle {
   toggle: boolean;
 }
+
+export type Event =
+  | React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  | React.MouseEvent<HTMLButtonElement, MouseEvent>
+  | React.MouseEvent<HTMLElement, MouseEvent>;

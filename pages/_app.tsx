@@ -10,7 +10,7 @@ interface CustomAppProps extends AppProps {}
 
 const MyApp: React.FC<CustomAppProps> = ({ Component, pageProps }) => {
   const [darkmode, setDarkmode] = useState(false);
-  const [toggle, setToggle] = useState(false)
+  const [toggle, setToggle] = useState(false);
 
   useEffect(() => {
     let matched = window.matchMedia("(prefers-color-scheme: dark)").matches;

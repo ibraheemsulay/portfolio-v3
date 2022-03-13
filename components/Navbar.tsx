@@ -10,10 +10,10 @@ import PersonLogo from "../assets/svgs/PersonLogo";
 import TwitterLogo from "../assets/svgs/TwitterLogo";
 import LetterLogo from "../assets/svgs/Letter";
 import GithubIcon from "../assets/svgs/GithubIcon";
-import { useState } from "react";
 import Link from "next/link";
 import { useContext } from "react";
 import { Context } from "../assets/Context";
+import { Event } from "../ts-types/styleTypes";
 
 const Nav = () => {
   const { darkmode, toggle, setToggle } = useContext(Context);
@@ -37,35 +37,37 @@ const Nav = () => {
         <li>
           <Link href="/">
             <a>
-              <HomeLogo /> <span>Home</span>
+              <HomeLogo /> <button>Home</button>
             </a>
           </Link>
         </li>
         <li>
-          <Link href="/#about">
+          <Link href="/#aboutMe">
             <a>
-              <PersonLogo /> <span>About</span>
+              <PersonLogo /> <button>About</button>
             </a>
           </Link>
         </li>
         <li>
           <Link href="/#skills">
             <a>
-              <SkillsLogo /> <span>Skills</span>
+              <SkillsLogo /> <button>Skills</button>
             </a>
           </Link>
         </li>
         <li>
           <Link href="/AllProjects">
             <a>
-              <FileLogo /> <span>Projects</span>
+              <FileLogo />
+              <button>Projects</button>
             </a>
           </Link>
         </li>
         <li>
           <Link href="/#contact">
             <a>
-              <CallLogo /> <span>Contact</span>
+              <CallLogo />
+              <button>Contact</button>
             </a>
           </Link>
         </li>
