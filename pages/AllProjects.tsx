@@ -45,7 +45,7 @@ export async function getStaticProps() {
 }
 
 const AllProjects: NextPage<IAllProjectsProps> = ({ projects }) => {
-  const { darkmode, setToggle } = useContext(Context);
+  const { toggle, darkmode, setToggle } = useContext(Context);
 
   const [number, setNumber] = useState(1);
 
@@ -58,8 +58,14 @@ const AllProjects: NextPage<IAllProjectsProps> = ({ projects }) => {
     setToggle(false);
   };
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => falseToggler(), []);
+  useEffect(
+    () => () => {
+      falseToggler();
+      console.log(toggle);
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
 
   useEffect(() => {
     const pag = paginateFunction({

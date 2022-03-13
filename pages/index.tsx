@@ -40,7 +40,7 @@ export async function getStaticProps() {
 }
 
 const MainBody: NextPage<IIndexPageProps> = ({ projects, about }) => {
-  const { darkmode, setToggle } = useContext(Context);
+  const { darkmode, toggle, setToggle } = useContext(Context);
 
   const keyProjects = projects.filter(p => {
     switch (p.fields.title) {
@@ -55,13 +55,20 @@ const MainBody: NextPage<IIndexPageProps> = ({ projects, about }) => {
     }
   });
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => falseToggler(), []);
-
   const falseToggler = (e?: React.TouchEvent<HTMLElement>) => {
     e?.stopPropagation();
     setToggle(false);
   };
+
+  useEffect(
+    () => () => {
+      falseToggler();
+      console.log(toggle);
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
+
   return (
     <>
       <Head>
