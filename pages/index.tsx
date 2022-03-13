@@ -60,14 +60,6 @@ const MainBody: NextPage<IIndexPageProps> = ({ projects, about }) => {
     setToggle(false);
   };
 
-  useEffect(
-    () => () => {
-      falseToggler();
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
-  );
-
   return (
     <>
       <Head>

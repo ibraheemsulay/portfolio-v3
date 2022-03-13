@@ -58,14 +58,6 @@ const AllProjects: NextPage<IAllProjectsProps> = ({ projects }) => {
     setToggle(false);
   };
 
-  useEffect(
-    () => () => {
-      falseToggler();
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
-  );
-
   useEffect(() => {
     const pag = paginateFunction({
       arr: [...projects],
