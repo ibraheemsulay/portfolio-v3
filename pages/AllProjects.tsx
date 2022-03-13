@@ -45,7 +45,7 @@ export async function getStaticProps() {
 }
 
 const AllProjects: NextPage<IAllProjectsProps> = ({ projects }) => {
-  const { toggle, darkmode, setToggle } = useContext(Context);
+  const { darkmode, setToggle } = useContext(Context);
 
   const [number, setNumber] = useState(1);
 
@@ -61,7 +61,6 @@ const AllProjects: NextPage<IAllProjectsProps> = ({ projects }) => {
   useEffect(
     () => () => {
       falseToggler();
-      console.log(toggle);
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     []

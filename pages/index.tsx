@@ -40,7 +40,7 @@ export async function getStaticProps() {
 }
 
 const MainBody: NextPage<IIndexPageProps> = ({ projects, about }) => {
-  const { darkmode, toggle, setToggle } = useContext(Context);
+  const { darkmode, setToggle } = useContext(Context);
 
   const keyProjects = projects.filter(p => {
     switch (p.fields.title) {
@@ -63,7 +63,6 @@ const MainBody: NextPage<IIndexPageProps> = ({ projects, about }) => {
   useEffect(
     () => () => {
       falseToggler();
-      console.log(toggle);
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     []
