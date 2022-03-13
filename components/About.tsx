@@ -21,10 +21,10 @@ const About: React.FC<IAboutProps> = ({ about }) => {
   const { darkmode } = useContext(Context);
 
   return (
-    <AboutStyle darkMode={darkmode} id="about">
+    <AboutStyle darkMode={darkmode} id="aboutMe">
       <Blob />
       <Row>
-        <h3 id="about">About Me</h3>
+        <h3>About Me</h3>
       </Row>
       <div ref={ref} className={`about ${inView ? "el-fadeIn" : "el-fadeOut"}`}>
         <HeroStyle>

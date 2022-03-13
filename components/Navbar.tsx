@@ -45,7 +45,7 @@ const Nav = () => {
           </Link>
         </li>
         <li>
-          <Link href="/#about">
+          <Link href="/#aboutMe">
             <a>
               <PersonLogo /> <button>About</button>
             </a>
