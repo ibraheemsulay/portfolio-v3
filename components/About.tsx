@@ -21,7 +21,7 @@ const About: React.FC<IAboutProps> = ({ about }) => {
   const { darkmode } = useContext(Context);
 
   return (
-    <AboutStyle darkMode={darkmode}>
+    <AboutStyle darkMode={darkmode} id="about">
       <Blob />
       <Row>
         <h3 id="about">About Me</h3>
