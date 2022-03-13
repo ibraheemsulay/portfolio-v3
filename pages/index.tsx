@@ -10,7 +10,7 @@ import Contact from "../components/Contact";
 import { createClient } from "contentful";
 import { IIndexPageProps } from "../ts-types/componentTypes";
 import { Context } from "../assets/Context";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Head from "next/head";
 
 const id = process.env.CONTENTFUL_SPACE_ID,
@@ -40,7 +40,8 @@ export async function getStaticProps() {
 }
 
 const MainBody: NextPage<IIndexPageProps> = ({ projects, about }) => {
-  const { darkmode } = useContext(Context);
+  const { darkmode, setToggle } = useContext(Context);
+
   const keyProjects = projects.filter(p => {
     switch (p.fields.title) {
       case "Formpl":
@@ -54,6 +55,13 @@ const MainBody: NextPage<IIndexPageProps> = ({ projects, about }) => {
     }
   });
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => falseToggler(), []);
+
+  const falseToggler = (e?: React.TouchEvent<HTMLElement>) => {
+    e?.stopPropagation();
+    setToggle(false);
+  };
   return (
     <>
       <Head>
@@ -93,7 +101,11 @@ const MainBody: NextPage<IIndexPageProps> = ({ projects, about }) => {
       </Head>
 
       <div>
-        <MainBodyStyle className="main" darkMode={darkmode}>
+        <MainBodyStyle
+          className="main"
+          darkMode={darkmode}
+          onTouchStart={e => falseToggler(e)}
+        >
           <Container>
             <Hero />
           </Container>

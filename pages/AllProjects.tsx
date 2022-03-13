@@ -45,13 +45,21 @@ export async function getStaticProps() {
 }
 
 const AllProjects: NextPage<IAllProjectsProps> = ({ projects }) => {
-  const { darkmode } = useContext(Context);
+  const { darkmode, setToggle } = useContext(Context);
 
   const [number, setNumber] = useState(1);
 
   const numOfPages = Math.ceil(projects.length / 4);
 
   const [projectsToShow, setProjectsToShow] = useState<any>([]);
+
+  const falseToggler = (e?: React.TouchEvent<HTMLElement>) => {
+    e?.stopPropagation();
+    setToggle(false);
+  };
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => falseToggler(), []);
 
   useEffect(() => {
     const pag = paginateFunction({
@@ -94,7 +102,10 @@ const AllProjects: NextPage<IAllProjectsProps> = ({ projects }) => {
 
         <meta property="og:title" content="Projects | Ibrahim Sule" />
 
-        <meta property="og:url" content="www.ibraheemsulay.vercel.app/AllProjects" />
+        <meta
+          property="og:url"
+          content="www.ibraheemsulay.vercel.app/AllProjects"
+        />
 
         <meta
           property="og:description"
@@ -102,7 +113,7 @@ const AllProjects: NextPage<IAllProjectsProps> = ({ projects }) => {
         />
       </Head>
 
-      <AllProjectsStyle darkMode={darkmode}>
+      <AllProjectsStyle darkMode={darkmode} onTouchStart={e => falseToggler(e)}>
         <Container className="container">
           <div className="title">
             <h3>All Projects</h3>

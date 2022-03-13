@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 export interface IProject {
   fields: {
     link: string;
@@ -43,4 +45,6 @@ export interface IAbout {
 export interface IContext {
   darkmode: boolean;
   toggleDarkmode: () => void;
+  toggle: boolean;
+  setToggle: Dispatch<SetStateAction<boolean>>;
 }

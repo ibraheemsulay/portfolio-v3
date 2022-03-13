@@ -10,25 +10,27 @@ import PersonLogo from "../assets/svgs/PersonLogo";
 import TwitterLogo from "../assets/svgs/TwitterLogo";
 import LetterLogo from "../assets/svgs/Letter";
 import GithubIcon from "../assets/svgs/GithubIcon";
-import { useState } from "react";
 import Link from "next/link";
 import { useContext } from "react";
 import { Context } from "../assets/Context";
+import { Event } from "../ts-types/styleTypes";
 
 const Nav = () => {
-  const [toggle, setToggle] = useState(false);
+  const { darkmode, toggle, setToggle } = useContext(Context);
 
   const trueToggler = () => setToggle(true);
 
-  const falseToggler = () => setToggle(false);
-
-  const { darkmode } = useContext(Context);
+  const falseToggler = (e: Event) => {
+    e.stopPropagation();
+    setToggle(false);
+  };
 
   return (
     <Navbar
       toggle={toggle}
       onMouseEnter={trueToggler}
-      onMouseLeave={falseToggler}
+      onMouseLeave={e => falseToggler(e)}
+      onTouchStart={trueToggler}
       darkMode={darkmode}
     >
       <div>
@@ -38,35 +40,37 @@ const Nav = () => {
         <li>
           <Link href="/">
             <a>
-              <HomeLogo /> <span>Home</span>
+              <HomeLogo /> <button>Home</button>
             </a>
           </Link>
         </li>
         <li>
           <Link href="/#about">
             <a>
-              <PersonLogo /> <span>About</span>
+              <PersonLogo /> <button>About</button>
             </a>
           </Link>
         </li>
         <li>
           <Link href="/#skills">
             <a>
-              <SkillsLogo /> <span>Skills</span>
+              <SkillsLogo /> <button>Skills</button>
             </a>
           </Link>
         </li>
         <li>
           <Link href="/AllProjects">
             <a>
-              <FileLogo /> <span>Projects</span>
+              <FileLogo />
+              <button>Projects</button>
             </a>
           </Link>
         </li>
         <li>
           <Link href="/#contact">
             <a>
-              <CallLogo /> <span>Contact</span>
+              <CallLogo />
+              <button>Contact</button>
             </a>
           </Link>
         </li>
