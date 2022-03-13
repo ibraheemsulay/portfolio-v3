@@ -37,21 +37,21 @@ const Nav = () => {
         <li>
           <Link href="/">
             <a>
-              <HomeLogo /> <button>Home</button>
+              <HomeLogo /> <span>Home</span>
             </a>
           </Link>
         </li>
         <li>
           <Link href="/#aboutMe">
             <a>
-              <PersonLogo /> <button>About</button>
+              <PersonLogo /> <span>About</span>
             </a>
           </Link>
         </li>
         <li>
           <Link href="/#skills">
             <a>
-              <SkillsLogo /> <button>Skills</button>
+              <SkillsLogo /> <span>Skills</span>
             </a>
           </Link>
         </li>
@@ -59,7 +59,7 @@ const Nav = () => {
           <Link href="/AllProjects">
             <a>
               <FileLogo />
-              <button>Projects</button>
+              <span>Projects</span>
             </a>
           </Link>
         </li>
@@ -67,7 +67,7 @@ const Nav = () => {
           <Link href="/#contact">
             <a>
               <CallLogo />
-              <button>Contact</button>
+              <span>Contact</span>
             </a>
           </Link>
         </li>

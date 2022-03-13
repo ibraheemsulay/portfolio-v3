@@ -43,13 +43,8 @@ export const Navbar = styled.nav<INavbarStyle>`
           color: ${({ theme }) => theme.theme1.navHoverCol};
         }
 
-        button {
+        span {
           margin-left: 5px;
-          display: inline;
-          border: none;
-          background: transparent;
-          color: inherit;
-          outline: none;
           font-size: ${({ toggle }) => (toggle ? "inherit" : "0")};
           transition: all 0.3s ease-in;
         }
