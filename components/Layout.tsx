@@ -8,16 +8,14 @@ import { Context } from "../assets/Context";
 const Layout: React.FC<ILayout> = ({ children }) => {
   const { darkmode, toggleDarkmode } = useContext(Context);
   return (
-    <>
-      <LayoutStyle darkMode={darkmode}>
-        <button className="darkmode" onClick={() => toggleDarkmode()}>
-          <span className="light">Light</span>
-          <span className="dark">Dark</span>
-        </button>
-        <Nav />
-        <div>{children}</div>
-      </LayoutStyle>
-    </>
+    <LayoutStyle darkMode={darkmode}>
+      <button className="darkmode" onClick={() => toggleDarkmode()}>
+        <span className="light">Light</span>
+        <span className="dark">Dark</span>
+      </button>
+      <Nav />
+      <div>{children}</div>
+    </LayoutStyle>
   );
 };
 

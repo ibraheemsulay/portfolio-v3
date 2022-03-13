@@ -117,8 +117,7 @@ const AllProjects: NextPage<IAllProjectsProps> = ({ projects }) => {
           content="Developer Projects of Ibrahim Sule"
         />
       </Head>
-
-      <AllProjectsStyle darkMode={darkmode} onTouchStart={e => falseToggler(e)}>
+      <AllProjectsStyle darkMode={darkmode}>
         <Container className="container">
           <div className="title">
             <h3>All Projects</h3>

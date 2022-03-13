@@ -105,13 +105,8 @@ const MainBody: NextPage<IIndexPageProps> = ({ projects, about }) => {
           content="Developer portfolio of Ibrahim Sule"
         />
       </Head>
-
       <div>
-        <MainBodyStyle
-          className="main"
-          darkMode={darkmode}
-          onTouchStart={e => falseToggler(e)}
-        >
+        <MainBodyStyle className="main" darkMode={darkmode}>
           <Container>
             <Hero />
           </Container>
