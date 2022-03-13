@@ -53,11 +53,6 @@ const AllProjects: NextPage<IAllProjectsProps> = ({ projects }) => {
 
   const [projectsToShow, setProjectsToShow] = useState<any>([]);
 
-  const falseToggler = (e?: React.TouchEvent<HTMLElement>) => {
-    e?.stopPropagation();
-    setToggle(false);
-  };
-
   useEffect(() => {
     const pag = paginateFunction({
       arr: [...projects],

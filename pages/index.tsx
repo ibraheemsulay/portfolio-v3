@@ -98,7 +98,11 @@ const MainBody: NextPage<IIndexPageProps> = ({ projects, about }) => {
         />
       </Head>
       <div>
-        <MainBodyStyle className="main" darkMode={darkmode}>
+        <MainBodyStyle
+          className="main"
+          darkMode={darkmode}
+          onTouchStart={falseToggler}
+        >
           <Container>
             <Hero />
           </Container>
