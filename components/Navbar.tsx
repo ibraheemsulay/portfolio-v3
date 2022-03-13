@@ -16,19 +16,18 @@ import { useContext } from "react";
 import { Context } from "../assets/Context";
 
 const Nav = () => {
-  const [toggle, setToggle] = useState(false);
+  const { darkmode, toggle, setToggle } = useContext(Context);
 
   const trueToggler = () => setToggle(true);
 
   const falseToggler = () => setToggle(false);
-
-  const { darkmode } = useContext(Context);
 
   return (
     <Navbar
       toggle={toggle}
       onMouseEnter={trueToggler}
       onMouseLeave={falseToggler}
+      onTouchStart={trueToggler}
       darkMode={darkmode}
     >
       <div>

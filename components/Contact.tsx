@@ -2,19 +2,14 @@ import { ContactStyles } from "../styles/ContactStyles.styled";
 import img from "../assets/img/image";
 import { Button } from "../styles/Button.styled";
 import Image from "next/image";
-import { useInView } from "react-intersection-observer";
 
 const Contact = () => {
   const date = new Date();
 
-  const [ref, inView] = useInView({
-    threshold: 0,
-  });
-
   return (
     <ContactStyles>
       <h3 id="contact">Contact Me</h3>
-      <footer ref={ref} className={` ${inView ? "el-fadeIn" : "el-fadeOut"}`}>
+      <footer>
         <div>
           <Image
             src={img.email}

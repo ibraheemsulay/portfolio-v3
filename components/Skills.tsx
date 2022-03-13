@@ -17,16 +17,12 @@ import GsapIcon from "../assets/svgs/GsapIcon";
 import CypressIcon from "../assets/svgs/CypressIcon";
 import JestIcon from "../assets/svgs/JestIcon";
 import NextjsIcon from "../assets/svgs/NextjsIcon";
-import { useInView } from "react-intersection-observer";
 import { ISkillsProps } from "../ts-types/componentTypes";
 import { useContext } from "react";
 import { Context } from "../assets/Context";
 
 const Skills: React.FC<ISkillsProps> = () => {
   const { darkmode } = useContext(Context);
-  const [ref, inView] = useInView({
-    threshold: 0,
-  });
 
   return (
     <SkillsStyle darkMode={darkmode}>
@@ -34,10 +30,7 @@ const Skills: React.FC<ISkillsProps> = () => {
 
       <Row>
         <Blob />
-        <div
-          ref={ref}
-          className={` skills ${inView ? "el-fadeIn" : "el-fadeOut"}`}
-        >
+        <div className="skills">
           <div className="icon">
             <CssIcon />
             <h5>CSS</h5>

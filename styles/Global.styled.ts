@@ -111,16 +111,6 @@ h1,
     width: 100%;
     margin-top: 0;
   }
-
-  .el-fadeIn {
-    opacity: 1;
-  }
-
-  .el-fadeOut {
-      opacity: 0;
-
-
-  }
 `;
 
 export default GlobalStyle;

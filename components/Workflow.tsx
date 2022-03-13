@@ -3,21 +3,16 @@ import CommunicationIcon from "../assets/svgs/CommunicationIcon";
 import ProblemSolvingIcon from "../assets/svgs/ProblemSolvingIcon";
 import CriticalThinkingIcon from "../assets/svgs/CriticalThinkingIcon";
 import EmpathyIcon from "../assets/svgs/EmpathyIcon";
-import { useInView } from "react-intersection-observer";
 import { useContext } from "react";
 import { Context } from "../assets/Context";
 
 const Workflow = () => {
   const { darkmode } = useContext(Context);
 
-  const [ref, inView] = useInView({
-    threshold: 0,
-  });
-
   return (
     <WorkflowStyle darkMode={darkmode}>
       <h3>Work flow</h3>
-      <div ref={ref} className={` ${inView ? "el-fadeIn" : "el-fadeOut"}`}>
+      <div>
         <div className="wrapper">
           <div className="first-card">
             <div>
@@ -42,7 +37,6 @@ const Workflow = () => {
           <div className="third-card">
             <div>
               <CommunicationIcon />
-              {/* <HtmlIcon /> */}
             </div>
             <h4>Communication</h4>
             <p>

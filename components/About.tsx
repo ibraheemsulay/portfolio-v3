@@ -8,16 +8,11 @@ import { Row } from "../styles/Row.styled";
 import { Button } from "../styles/Button.styled";
 import Link from "next/link";
 import Image from "next/image";
-import { useInView } from "react-intersection-observer";
 import { IAboutProps } from "../ts-types/componentTypes";
 import { useContext } from "react";
 import { Context } from "../assets/Context";
 
 const About: React.FC<IAboutProps> = ({ about }) => {
-  const [ref, inView] = useInView({
-    threshold: 0,
-  });
-
   const { darkmode } = useContext(Context);
 
   return (
@@ -26,7 +21,7 @@ const About: React.FC<IAboutProps> = ({ about }) => {
       <Row id="about">
         <h3>About Me</h3>
       </Row>
-      <div ref={ref} className={`about ${inView ? "el-fadeIn" : "el-fadeOut"}`}>
+      <div>
         <HeroStyle>
           <AboutImgStyle className="about">
             <div>
