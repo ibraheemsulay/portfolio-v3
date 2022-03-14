@@ -63,7 +63,7 @@ const Nav = () => {
           </Link>
         </li>
         <li>
-          <Link href="/#contact" scroll={false}>
+          <Link href="/#contact">
             <a>
               <CallLogo />
               <span>Contact</span>

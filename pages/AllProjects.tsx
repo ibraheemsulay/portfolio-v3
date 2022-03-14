@@ -62,6 +62,23 @@ const AllProjects: NextPage<IAllProjectsProps> = ({ projects }) => {
     setProjectsToShow([...pag]);
   }, [projects, number]);
 
+  useEffect(() => {
+    const path = window.location.hash;
+    if (path && path.includes("#")) {
+      setTimeout(() => {
+        const id = path.replace("#", "");
+        const el = window.document.getElementById(id);
+        const r = el?.getBoundingClientRect();
+
+        r &&
+          window.top?.scroll({
+            top: scrollY + r.top,
+            behavior: "smooth",
+          });
+      }, 600);
+    }
+  });
+
   return (
     <>
       <Head>

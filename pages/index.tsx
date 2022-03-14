@@ -10,7 +10,6 @@ import Contact from "../components/Contact";
 import { createClient } from "contentful";
 import { IIndexPageProps } from "../ts-types/componentTypes";
 import { Context } from "../assets/Context";
-import { useRouter } from "next/router";
 import { useContext, useEffect } from "react";
 import Head from "next/head";
 
@@ -42,6 +41,23 @@ export async function getStaticProps() {
 
 const MainBody: NextPage<IIndexPageProps> = ({ projects, about }) => {
   const { darkmode, setToggle } = useContext(Context);
+
+  useEffect(() => {
+    const path = window.location.hash;
+    if (path && path.includes("#")) {
+      setTimeout(() => {
+        const id = path.replace("#", "");
+        const el = window.document.getElementById(id);
+        const r = el?.getBoundingClientRect();
+
+        r &&
+          window.top?.scroll({
+            top: scrollY + r.top,
+            behavior: "smooth",
+          });
+      }, 600);
+    }
+  });
 
   const keyProjects = projects.filter(p => {
     switch (p.fields.title) {
