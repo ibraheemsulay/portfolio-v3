@@ -11,7 +11,7 @@ import { createClient } from "contentful";
 import { IIndexPageProps } from "../ts-types/componentTypes";
 import { Context } from "../assets/Context";
 import { useRouter } from "next/router";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useRef } from "react";
 import Head from "next/head";
 
 const id = process.env.CONTENTFUL_SPACE_ID,
@@ -44,12 +44,29 @@ const MainBody: NextPage<IIndexPageProps> = ({ projects, about }) => {
   const { darkmode, setToggle } = useContext(Context);
 
   const router = useRouter();
+  const aboutMe = useRef<HTMLDivElement>(null);
+  const skills = useRef<HTMLDivElement>(null);
+  const contact = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    setTimeout(() => {
-      router.replace(window.location.href);
-    }, 50);
-  }, [window.location.hash]);
+    const path = router.asPath;
+    if (path && path.includes("/#")) {
+      const sectionName = path.replace("/#", "");
+      switch (sectionName) {
+        case "aboutMe":
+          aboutMe.current?.scrollIntoView({ behavior: "smooth" });
+          break;
+        case "skills":
+          skills.current?.scrollIntoView({ behavior: "smooth" });
+          break;
+        case "contact":
+          contact.current?.scrollIntoView({ behavior: "smooth" });
+          break;
+        default:
+          break;
+      }
+    }
+  }, [router.asPath]);
 
   const keyProjects = projects.filter(p => {
     switch (p.fields.title) {
@@ -110,11 +127,11 @@ const MainBody: NextPage<IIndexPageProps> = ({ projects, about }) => {
           <Container>
             <Hero />
           </Container>
-          <div id="aboutMe">
+          <div ref={aboutMe}>
             <About about={about} />
           </div>
 
-          <div className="skills">
+          <div ref={skills}>
             <Skills />
           </div>
           <div className="project-layout">
@@ -123,7 +140,7 @@ const MainBody: NextPage<IIndexPageProps> = ({ projects, about }) => {
           <div className="workflow">
             <Workflow />
           </div>
-          <div className="contact">
+          <div ref={contact}>
             <Contact />
           </div>
         </MainBodyStyle>
