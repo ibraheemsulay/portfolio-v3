@@ -41,21 +41,21 @@ const Nav = () => {
           </Link>
         </li>
         <li>
-          <Link href="/#aboutMe">
+          <Link href="/#aboutMe" scroll={false}>
             <a>
               <PersonLogo /> <span>About</span>
             </a>
           </Link>
         </li>
         <li>
-          <Link href="/#skills">
+          <Link href="/#skills" scroll={false}>
             <a>
               <SkillsLogo /> <span>Skills</span>
             </a>
           </Link>
         </li>
         <li>
-          <Link href="/AllProjects">
+          <Link href="/AllProjects" scroll={false}>
             <a>
               <FileLogo />
               <span>Projects</span>
@@ -63,7 +63,7 @@ const Nav = () => {
           </Link>
         </li>
         <li>
-          <Link href="/#contact">
+          <Link href="/#contact" scroll={false}>
             <a>
               <CallLogo />
               <span>Contact</span>

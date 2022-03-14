@@ -11,7 +11,7 @@ import { createClient } from "contentful";
 import { IIndexPageProps } from "../ts-types/componentTypes";
 import { Context } from "../assets/Context";
 import { useRouter } from "next/router";
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect } from "react";
 import Head from "next/head";
 
 const id = process.env.CONTENTFUL_SPACE_ID,
@@ -42,31 +42,6 @@ export async function getStaticProps() {
 
 const MainBody: NextPage<IIndexPageProps> = ({ projects, about }) => {
   const { darkmode, setToggle } = useContext(Context);
-
-  const router = useRouter();
-  const aboutMe = useRef<HTMLDivElement>(null);
-  const skills = useRef<HTMLDivElement>(null);
-  const contact = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const path = router.asPath;
-    if (path && path.includes("/#")) {
-      const sectionName = path.replace("/#", "");
-      switch (sectionName) {
-        case "aboutMe":
-          aboutMe.current?.scrollIntoView({ behavior: "smooth" });
-          break;
-        case "skills":
-          skills.current?.scrollIntoView({ behavior: "smooth" });
-          break;
-        case "contact":
-          contact.current?.scrollIntoView({ behavior: "smooth" });
-          break;
-        default:
-          break;
-      }
-    }
-  }, [router.asPath]);
 
   const keyProjects = projects.filter(p => {
     switch (p.fields.title) {
@@ -127,11 +102,11 @@ const MainBody: NextPage<IIndexPageProps> = ({ projects, about }) => {
           <Container>
             <Hero />
           </Container>
-          <div ref={aboutMe}>
+          <div id="aboutMe">
             <About about={about} />
           </div>
 
-          <div ref={skills}>
+          <div className="skills">
             <Skills />
           </div>
           <div className="project-layout">
@@ -140,7 +115,7 @@ const MainBody: NextPage<IIndexPageProps> = ({ projects, about }) => {
           <div className="workflow">
             <Workflow />
           </div>
-          <div ref={contact}>
+          <div className="contact">
             <Contact />
           </div>
         </MainBodyStyle>
