@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/link-passhref */
 import { Navbar } from "../styles/Navbar.styled";
 import CallLogo from "../assets/svgs/CallLogo";
 import EmailLogo from "../assets/svgs/EmailLogo";
@@ -43,7 +42,9 @@ const Nav = () => {
         </li>
         <li>
           <Link href="/#aboutMe">
-            <PersonLogo /> <span>About</span>
+            <a>
+              <PersonLogo /> <span>About</span>
+            </a>
           </Link>
         </li>
         <li>

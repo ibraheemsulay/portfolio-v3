@@ -10,7 +10,7 @@ import Contact from "../components/Contact";
 import { createClient } from "contentful";
 import { IIndexPageProps } from "../ts-types/componentTypes";
 import { Context } from "../assets/Context";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import Head from "next/head";
 
 const id = process.env.CONTENTFUL_SPACE_ID,
@@ -101,7 +101,7 @@ const MainBody: NextPage<IIndexPageProps> = ({ projects, about }) => {
           <Container>
             <Hero />
           </Container>
-          <div>
+          <div id="aboutMe">
             <About about={about} />
           </div>
 
