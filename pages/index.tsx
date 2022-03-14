@@ -10,7 +10,7 @@ import Contact from "../components/Contact";
 import { createClient } from "contentful";
 import { IIndexPageProps } from "../ts-types/componentTypes";
 import { Context } from "../assets/Context";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Head from "next/head";
 
 const id = process.env.CONTENTFUL_SPACE_ID,
@@ -41,6 +41,7 @@ export async function getStaticProps() {
 
 const MainBody: NextPage<IIndexPageProps> = ({ projects, about }) => {
   const { darkmode, setToggle } = useContext(Context);
+
   const keyProjects = projects.filter(p => {
     switch (p.fields.title) {
       case "Formpl":
@@ -51,6 +52,15 @@ const MainBody: NextPage<IIndexPageProps> = ({ projects, about }) => {
         return true;
       default:
         return false;
+    }
+  });
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      setTimeout(() => {
+        document?.querySelector(hash)?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
     }
   });
 

@@ -13,7 +13,6 @@ import GithubIcon from "../assets/svgs/GithubIcon";
 import Link from "next/link";
 import { useContext } from "react";
 import { Context } from "../assets/Context";
-import { Event } from "../ts-types/styleTypes";
 
 const Nav = () => {
   const { darkmode, toggle, setToggle } = useContext(Context);
