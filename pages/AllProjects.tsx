@@ -69,13 +69,13 @@ const AllProjects: NextPage<IAllProjectsProps> = ({ projects }) => {
         const id = path.replace("#", "");
         const el = window.document.getElementById(id);
         const r = el?.getBoundingClientRect();
-
+        console.log(r, scrollY);
         r &&
           window.top?.scroll({
-            top: scrollY + r.top,
+            top: r.top,
             behavior: "smooth",
           });
-      }, 600);
+      }, 1000);
     }
   });
 

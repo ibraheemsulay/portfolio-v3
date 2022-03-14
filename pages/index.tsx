@@ -49,13 +49,12 @@ const MainBody: NextPage<IIndexPageProps> = ({ projects, about }) => {
         const id = path.replace("#", "");
         const el = window.document.getElementById(id);
         const r = el?.getBoundingClientRect();
-
         r &&
           window.top?.scroll({
-            top: scrollY + r.top,
+            top: r.top,
             behavior: "smooth",
           });
-      }, 600);
+      }, 1000);
     }
   });
 
