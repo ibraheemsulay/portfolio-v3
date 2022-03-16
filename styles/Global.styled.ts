@@ -20,10 +20,10 @@ const GlobalStyle = createGlobalStyle<GlobalProps>`
 
 body {
     width: 100vw;
-    max-width: 1500px;
-    margin: auto;
     overflow-x: hidden;
     font-size: 16px;
+    background: ${({ theme, darkMode }) =>
+    darkMode ? theme.theme2.bgCol : theme.theme1.bgCol};
 }
 
 h1,

@@ -5,6 +5,8 @@ import { IStyle } from "../ts-types/styleTypes";
 export const LayoutStyle = styled(Row)<IStyle>`
   height: 100vh;
   position: relative;
+  max-width: 1500px;
+  margin: auto;
 
   .darkmode {
     position: absolute;
