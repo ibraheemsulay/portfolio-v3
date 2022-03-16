@@ -11,6 +11,9 @@ import { IAboutProps } from "../ts-types/componentTypes";
 import { useContext } from "react";
 import { Context } from "../assets/Context";
 
+const cvLink =
+  "https://drive.google.com/file/d/1OqEOvO72G9pSN3iL7gnfDLgqXn2PLCgg/view?usp=sharing";
+
 const About: React.FC<IAboutProps> = ({ about }) => {
   const { darkmode } = useContext(Context);
 
@@ -34,7 +37,7 @@ const About: React.FC<IAboutProps> = ({ about }) => {
           </AboutImgStyle>
           <div className="title">
             <p>{about[0].fields.about}</p>
-            <Link href={`https:${about[0].fields.cv.fields.file.url}`}>
+            <Link href={cvLink}>
               <a>
                 <Button>View CV</Button>
               </a>
