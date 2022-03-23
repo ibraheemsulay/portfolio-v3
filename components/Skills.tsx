@@ -26,7 +26,7 @@ const Skills: React.FC<ISkillsProps> = () => {
 
   return (
     <SkillsStyle darkMode={darkmode}>
-      <h3 id="skills">My Skills</h3>
+      <h3 id="Skills">My Skills</h3>
 
       <Row>
         <Blob />

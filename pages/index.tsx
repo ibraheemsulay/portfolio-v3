@@ -114,7 +114,7 @@ const MainBody: NextPage<IIndexPageProps> = props => {
             <About about={about} />
           </div>
 
-          <div id="Skills">
+          <div>
             <Skills />
           </div>
           <div className="project-layout">
