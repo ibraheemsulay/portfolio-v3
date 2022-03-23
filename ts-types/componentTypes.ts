@@ -12,17 +12,21 @@ export interface IProjectsProps {
 }
 
 export interface ILayout {
-  children?: ReactElement;
+  children: ReactElement;
   darkMode?: boolean;
 }
 
-export interface IAllProjectsProps extends ILayout {
+export interface IAllProjectsProps {
   projects: IProject[];
+  darkMode?: boolean;
 }
 
-export interface IIndexPageProps extends ILayout {
+export interface IIndexPageProps {
   projects: IProject[];
+  darkMode?: boolean;
   about: any;
+  el: string;
+  setEl: Dispatch<SetStateAction<string>>;
 }
 
 export interface IPaginationProps {
@@ -31,9 +35,19 @@ export interface IPaginationProps {
   setNumber: Dispatch<SetStateAction<number>>;
 }
 
-export interface IAboutProps extends ILayout {
+export interface IAboutProps {
   about: IAbout[];
+  darkMode?: boolean;
 }
 
-export interface ISkillsProps extends ILayout {}
-export interface IHeroProps extends ILayout {}
+export interface ISkillsProps {
+  darkMode?: boolean;
+}
+export interface IHeroProps {
+  darkMode?: boolean;
+}
+
+export interface INavProps {
+  el: string;
+  setEl: Dispatch<SetStateAction<string>>;
+}

@@ -10,7 +10,7 @@ import Contact from "../components/Contact";
 import { createClient } from "contentful";
 import { IIndexPageProps } from "../ts-types/componentTypes";
 import { Context } from "../assets/Context";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Head from "next/head";
 
 const id = process.env.CONTENTFUL_SPACE_ID,
@@ -39,8 +39,17 @@ export async function getStaticProps() {
   };
 }
 
-const MainBody: NextPage<IIndexPageProps> = ({ projects, about }) => {
+const MainBody: NextPage<IIndexPageProps> = props => {
   const { darkmode, setToggle } = useContext(Context);
+  const { projects, about, el, setEl } = props;
+
+  useEffect(() => {
+    if (el.length) {
+      const element = document.getElementById(el);
+      element?.scrollIntoView(true);
+      return () => setEl("");
+    }
+  }, [el, setEl]);
 
   const keyProjects = projects.filter(p => {
     switch (p.fields.title) {
@@ -101,11 +110,11 @@ const MainBody: NextPage<IIndexPageProps> = ({ projects, about }) => {
           <Container>
             <Hero />
           </Container>
-          <div id="aboutMe">
+          <div id="PersonAbout">
             <About about={about} />
           </div>
 
-          <div className="skills">
+          <div id="Skills">
             <Skills />
           </div>
           <div className="project-layout">
@@ -114,7 +123,7 @@ const MainBody: NextPage<IIndexPageProps> = ({ projects, about }) => {
           <div className="workflow">
             <Workflow />
           </div>
-          <div className="contact">
+          <div id="Contact">
             <Contact />
           </div>
         </MainBodyStyle>

@@ -11,15 +11,31 @@ import TwitterLogo from "../assets/svgs/TwitterLogo";
 import LetterLogo from "../assets/svgs/Letter";
 import GithubIcon from "../assets/svgs/GithubIcon";
 import Link from "next/link";
-import { useContext } from "react";
+import { useContext, MouseEvent } from "react";
 import { Context } from "../assets/Context";
+import { useRouter } from "next/router";
+import { INavProps } from "../ts-types/componentTypes";
 
-const Nav = () => {
+const Nav: React.FC<INavProps> = ({ setEl }) => {
   const { darkmode, toggle, setToggle } = useContext(Context);
+
+  const router = useRouter();
 
   const trueToggler = () => setToggle(true);
 
   const falseToggler = () => setToggle(false);
+
+  const scrollToId = (
+    e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>
+  ) => {
+    const innerText = e.currentTarget.textContent!;
+    const el = document.getElementById(innerText);
+    if (router.pathname === "/AllProjects") {
+      setEl(innerText);
+      router.push("/");
+    }
+    el?.scrollIntoView(true);
+  };
 
   return (
     <Navbar
@@ -36,23 +52,22 @@ const Nav = () => {
         <li>
           <Link href="/">
             <a>
-              <HomeLogo /> <span>Home</span>
+              <HomeLogo />
+              <span>Home</span>
             </a>
           </Link>
         </li>
         <li>
-          <Link href="/#aboutMe" scroll={false}>
-            <a>
-              <PersonLogo /> <span>About</span>
-            </a>
-          </Link>
+          <button onClick={e => scrollToId(e)}>
+            <PersonLogo />
+            <span>About</span>
+          </button>
         </li>
         <li>
-          <Link href="/#skills" scroll={false}>
-            <a>
-              <SkillsLogo /> <span>Skills</span>
-            </a>
-          </Link>
+          <button onClick={e => scrollToId(e)}>
+            <SkillsLogo />
+            <span>Skills</span>
+          </button>
         </li>
         <li>
           <Link href="/AllProjects" scroll={false}>
@@ -63,12 +78,10 @@ const Nav = () => {
           </Link>
         </li>
         <li>
-          <Link href="/#contact">
-            <a>
-              <CallLogo />
-              <span>Contact</span>
-            </a>
-          </Link>
+          <button onClick={e => scrollToId(e)}>
+            <CallLogo />
+            <span>Contact</span>
+          </button>
         </li>
       </ul>
 

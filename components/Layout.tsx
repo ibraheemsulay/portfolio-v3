@@ -1,20 +1,21 @@
 import { LayoutStyle } from "../styles/LayoutStyle.styled";
 import Nav from "./Navbar";
 import { ILayout } from "../ts-types/componentTypes";
-import Head from "next/head";
-import { useContext } from "react";
+
+import { useContext, useState, cloneElement } from "react";
 import { Context } from "../assets/Context";
 
 const Layout: React.FC<ILayout> = ({ children }) => {
   const { darkmode, toggleDarkmode } = useContext(Context);
+  const [el, setEl] = useState<string>("");
   return (
     <LayoutStyle darkMode={darkmode}>
       <button className="darkmode" onClick={() => toggleDarkmode()}>
         <span className="light">Light</span>
         <span className="dark">Dark</span>
       </button>
-      <Nav />
-      <div>{children}</div>
+      <Nav el={el} setEl={setEl} />
+      <div>{cloneElement(children, { el, setEl })}</div>
     </LayoutStyle>
   );
 };
