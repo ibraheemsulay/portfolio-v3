@@ -48,9 +48,9 @@ const MainBody: NextPage<IIndexPageProps> = props => {
       if (el.length) {
         const element = document.getElementById(el);
         element?.scrollIntoView(true);
-        return () => setEl("");
       }
     }, 1000);
+    return () => setEl("");
   }, [el, setEl]);
 
   const keyProjects = projects.filter(p => {
