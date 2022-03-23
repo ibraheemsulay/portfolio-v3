@@ -44,11 +44,13 @@ const MainBody: NextPage<IIndexPageProps> = props => {
   const { projects, about, el, setEl } = props;
 
   useEffect(() => {
-    if (el.length) {
-      const element = document.getElementById(el);
-      element?.scrollIntoView(true);
-      return () => setEl("");
-    }
+    setTimeout(() => {
+      if (el.length) {
+        const element = document.getElementById(el);
+        element?.scrollIntoView(true);
+        return () => setEl("");
+      }
+    }, 1000);
   }, [el, setEl]);
 
   const keyProjects = projects.filter(p => {

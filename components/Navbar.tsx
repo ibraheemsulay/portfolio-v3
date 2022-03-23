@@ -33,8 +33,9 @@ const Nav: React.FC<INavProps> = ({ setEl }) => {
     if (router.pathname === "/AllProjects") {
       setEl(innerText);
       router.push("/");
+    } else {
+      el?.scrollIntoView(true);
     }
-    el?.scrollIntoView(true);
   };
 
   return (
