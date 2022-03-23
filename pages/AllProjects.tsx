@@ -62,7 +62,6 @@ const AllProjects: NextPage<IAllProjectsProps> = ({ projects }) => {
     setProjectsToShow([...pag]);
   }, [projects, number]);
 
-
   return (
     <>
       <Head>
@@ -97,7 +96,7 @@ const AllProjects: NextPage<IAllProjectsProps> = ({ projects }) => {
 
         <meta
           property="og:url"
-          content="www.ibraheemsulay.vercel.app/AllProjects"
+          content="https://ibraheemsulay.vercel.app/AllProjects"
         />
 
         <meta

@@ -96,7 +96,7 @@ const MainBody: NextPage<IIndexPageProps> = props => {
 
         <meta property="og:title" content="Ibrahim Sule" />
 
-        <meta property="og:url" content="www.ibraheemsulay.vercel.app" />
+        <meta property="og:url" content="https://ibraheemsulay.vercel.app" />
 
         <meta
           property="og:description"
