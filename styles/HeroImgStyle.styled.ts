@@ -2,12 +2,11 @@ import styled from "styled-components";
 import { IStyle } from "../ts-types/styleTypes";
 
 export const HeroImgStyle = styled.div<IStyle>`
-  flex-basis: 100%;
+  flex-basis: 80%;
   aspect-ratio: 7/6;
-
+  margin: auto;
   @media (min-width: 576px) {
     flex-basis: 70%;
-    margin: auto;
   }
   @media (min-width: 768px) {
     flex-basis: 50%;
