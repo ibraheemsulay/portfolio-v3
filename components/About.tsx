@@ -12,7 +12,7 @@ import { useContext } from "react";
 import { Context } from "../assets/Context";
 
 const cvLink =
-  "https://drive.google.com/file/d/1OqEOvO72G9pSN3iL7gnfDLgqXn2PLCgg/view?usp=sharing";
+  "https://drive.google.com/file/d/1ZAw-5fqQTuKxcDGMWDk9pgYzPD56th-1/view?usp=sharing";
 
 const About: React.FC<IAboutProps> = ({ about }) => {
   const { darkmode } = useContext(Context);
