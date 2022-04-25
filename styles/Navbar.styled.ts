@@ -3,7 +3,9 @@ import { INavbarStyle } from "../ts-types/styleTypes";
 
 export const Navbar = styled.nav<INavbarStyle>`
   display: flex;
-  position: relative;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
   overflow: initial !important;
   flex: 0 0;
   flex-direction: row;
@@ -34,12 +36,15 @@ export const Navbar = styled.nav<INavbarStyle>`
     background: ${({ theme, darkMode }) =>
       darkMode ? theme.theme2.navBgCol : theme.theme1.navBgCol};
     border-radius: 0 0 20px 0;
+    animation: slide-out 0s 0s ease 1 forwards;
+
     ul {
       list-style-type: none;
       padding-inline-start: 0;
       li {
         display: flex;
         justify-content: center;
+        transform: translate(-100%, -100%);
         a {
           color: ${({ theme, darkMode }) =>
             darkMode ? theme.theme2.navTextCol : theme.theme1.navTextCol};
@@ -98,7 +103,7 @@ export const Navbar = styled.nav<INavbarStyle>`
       }
     }
     ul:nth-of-type(2) {
-      display: flex;
+      display: none;
       margin-bottom: 20px;
       justify-content: center;
       li {
@@ -128,6 +133,7 @@ export const Navbar = styled.nav<INavbarStyle>`
     outline: none;
     border: none;
     align-self: center;
+    cursor: pointer;
 
     span {
       display: block;
@@ -141,27 +147,33 @@ export const Navbar = styled.nav<INavbarStyle>`
     .first {
       margin-top: 0;
     }
+    .second {
+      width: 25px;
+      margin-left: auto;
+    }
 
-    &:hover {
+    ${({ theme, toggle, toggleIcon }) =>
+      toggleIcon &&
+      `
       padding-right: 0.1rem;
       .first {
-        width: 42.4px;
-        transform: rotateZ(45deg) translate(10%, 300%);
+        transform: rotateZ(45deg) translate(5px, 350%);
       }
       .second {
         opacity: 0;
         background: red;
       }
       .third {
-        width: 42.4px;
         transform: rotateZ(-45deg) translate(10%, -300%);
       }
-    }
+    `}
   }
 
   @media (min-width: 576px) {
     position: fixed;
+    width: unset;
     height: 100vh;
+    z-index: 1;
     max-height: 100vh;
     flex-direction: column;
     flex-basis: ${({ toggle }) => (toggle ? "100px" : "50px")};
@@ -177,13 +189,14 @@ export const Navbar = styled.nav<INavbarStyle>`
       display: flex;
       position: static;
       flex-direction: column;
-
+      animation: none;
       padding: 20vh 0 0;
 
       justify-content: space-between;
 
       li {
         display: block;
+        transform: translate(0, 0);
         a,
         button {
           span {

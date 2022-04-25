@@ -8,7 +8,7 @@ export const AllProjectsStyle = styled(MainBodyStyle)<IStyle>`
   margin: 0;
   flex-direction: column;
   justify-content: space-between;
-  padding: 50px 0 100px 50px;
+  padding: 20vh 0 100px 0px;
   min-height: 100vh;
 
   @media (min-width: 576px) {

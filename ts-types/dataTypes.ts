@@ -47,4 +47,6 @@ export interface IContext {
   toggleDarkmode: () => void;
   toggle: boolean;
   setToggle: Dispatch<SetStateAction<boolean>>;
+  toggleIcon: boolean;
+  setToggleIcon: Dispatch<SetStateAction<boolean>>;
 }

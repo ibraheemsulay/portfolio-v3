@@ -1,5 +1,6 @@
 import { ContactStyles } from "../styles/ContactStyles.styled";
 import img from "../assets/img/image";
+import SMHandles from "./SMHandles";
 import { Button } from "../styles/Button.styled";
 import Image from "next/image";
 
@@ -31,6 +32,9 @@ const Contact = () => {
           <a href="mailto:ibraheemsulay@gmail.com" rel="noreferrer">
             <Button>Email Me </Button>
           </a>
+          <div>
+            <SMHandles />
+          </div>
         </div>
       </footer>
       <span>&copy; {date.getFullYear()}</span>

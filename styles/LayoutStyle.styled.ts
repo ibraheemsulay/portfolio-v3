@@ -11,7 +11,7 @@ export const LayoutStyle = styled(Row)<IStyle>`
 
   .darkmode {
     position: absolute;
-    top: 7%;
+    top: 10%;
     right: 5%;
     outline: none;
     border-radius: 5px;

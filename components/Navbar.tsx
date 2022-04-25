@@ -8,17 +8,16 @@ import LinkedinLogo from "../assets/svgs/LinkedinLogo";
 import HomeLogo from "../assets/svgs/HomeLogo";
 import SkillsLogo from "../assets/svgs/SkillsLogo";
 import PersonLogo from "../assets/svgs/PersonLogo";
-import TwitterLogo from "../assets/svgs/TwitterLogo";
 import LetterLogo from "../assets/svgs/Letter";
-import GithubIcon from "../assets/svgs/GithubIcon";
 import Link from "next/link";
-import { useContext, useRef, useCallback, MouseEvent } from "react";
+import { MouseEvent, useContext, useRef, useCallback } from "react";
 import { Context } from "../assets/Context";
 import { useRouter } from "next/router";
 import { INavProps } from "../ts-types/componentTypes";
 
 const Nav: React.FC<INavProps> = ({ setEl }) => {
-  const { darkmode, toggle, setToggle } = useContext(Context);
+  const { darkmode, toggle, setToggle, toggleIcon, setToggleIcon } =
+    useContext(Context);
 
   const router = useRouter();
 
@@ -30,8 +29,12 @@ const Nav: React.FC<INavProps> = ({ setEl }) => {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const toggleNav = useCallback(() => {
-    setToggle(toggle => !toggle);
+    if (window.innerWidth > 576) return;
+
+    setToggleIcon(toggle => !toggle);
+
     const el = section.current!;
+    el.style.display = "block";
     let li,
       time = 1;
     if (!el) return;
@@ -41,7 +44,7 @@ const Nav: React.FC<INavProps> = ({ setEl }) => {
     const [a] = lists;
     lists = [...Array.from(a)];
 
-    if (!toggle) {
+    if (toggleIcon) {
       for (li of lists as unknown as HTMLCollectionOf<HTMLLIElement>) {
         li.style.animation = `slide-out  .2s ${0.1 * time}s ease-in 1 forwards`;
         time++;
@@ -54,12 +57,13 @@ const Nav: React.FC<INavProps> = ({ setEl }) => {
         time++;
       }
     }
-  }, [toggle, setToggle]);
+  }, [toggleIcon]);
 
   const scrollToId = (
     e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>
   ) => {
     const innerText = e.currentTarget.textContent!;
+    toggleNav();
     const el = document.getElementById(innerText);
     if (router.pathname === "/AllProjects") {
       setEl(innerText);
@@ -76,6 +80,7 @@ const Nav: React.FC<INavProps> = ({ setEl }) => {
       onMouseLeave={falseToggler}
       onTouchStart={trueToggler}
       darkMode={darkmode}
+      toggleIcon={toggleIcon}
     >
       <div className="logo">
         <LetterLogo />
@@ -84,7 +89,7 @@ const Nav: React.FC<INavProps> = ({ setEl }) => {
         <ul>
           <li>
             <Link href="/">
-              <a>
+              <a onClick={toggleNav}>
                 <HomeLogo />
                 <span>Home</span>
               </a>
@@ -104,7 +109,7 @@ const Nav: React.FC<INavProps> = ({ setEl }) => {
           </li>
           <li>
             <Link href="/AllProjects" scroll={false}>
-              <a>
+              <a onClick={toggleNav}>
                 <FileLogo />
                 <span>Projects</span>
               </a>
@@ -118,7 +123,7 @@ const Nav: React.FC<INavProps> = ({ setEl }) => {
           </li>
         </ul>
 
-        {/* {window.innerWidth > 576 && <SMHandles />} */}
+        <SMHandles />
 
         {/* <ul>
           <li>
@@ -178,3 +183,19 @@ const Nav: React.FC<INavProps> = ({ setEl }) => {
 };
 
 export default Nav;
+
+// &:hover {
+//   padding-right: 0.1rem;
+//   .first {
+//     width: 42.4px;
+//     transform: rotateZ(45deg) translate(10%, 300%);
+//   }
+//   .second {
+//     opacity: 0;
+//     background: red;
+//   }
+//   .third {
+//     width: 42.4px;
+//     transform: rotateZ(-45deg) translate(10%, -300%);
+//   }
+// }

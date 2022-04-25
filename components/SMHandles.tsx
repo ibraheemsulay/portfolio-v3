@@ -3,11 +3,14 @@ import TwitterLogo from "../assets/svgs/TwitterLogo";
 import LinkedinLogo from "../assets/svgs/LinkedinLogo";
 import EmailLogo from "../assets/svgs/EmailLogo";
 import FacebookLogo from "../assets/svgs/FacebookLogo";
+import { useContext } from "react";
 import { SMHandlesStyle } from "../styles/SMHandlesStyle.styled";
+import { Context } from "../assets/Context";
 
 const SMHandles = () => {
+  const { darkmode } = useContext(Context);
   return (
-    <SMHandlesStyle>
+    <SMHandlesStyle darkMode={darkmode}>
       <li>
         <a
           href="https://github.com/ibraheemsulay"
