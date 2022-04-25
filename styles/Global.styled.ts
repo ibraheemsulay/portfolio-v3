@@ -23,7 +23,7 @@ body {
     overflow-x: hidden;
     font-size: 16px;
     background: ${({ theme, darkMode }) =>
-    darkMode ? theme.theme2.bgCol : theme.theme1.bgCol};
+      darkMode ? theme.theme2.bgCol : theme.theme1.bgCol};
 }
 
 h1,
@@ -110,6 +110,32 @@ h1,
     padding: 0 -15px;
     width: 100%;
     margin-top: 0;
+  }
+
+  @keyframes slide-in {
+    from {
+      transform: translate(-100%, -100%);
+
+    }
+
+    to {
+      transform: translate(0%, 0%);
+
+    }
+  }
+
+  @keyframes slide-out {
+    from {
+      transform: translate(0%, 0%);
+
+    }
+
+    to {
+      transform: translate(-100%, -100%);
+
+    }
+
+
   }
 `;
 

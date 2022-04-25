@@ -7,10 +7,11 @@ export const LayoutStyle = styled(Row)<IStyle>`
   position: relative;
   max-width: 1500px;
   margin: auto;
+  display: block;
 
   .darkmode {
     position: absolute;
-    top: 2%;
+    top: 7%;
     right: 5%;
     outline: none;
     border-radius: 5px;
@@ -33,6 +34,13 @@ export const LayoutStyle = styled(Row)<IStyle>`
     .dark {
       background: ${({ darkMode }) => (darkMode ? "#c1d16a;" : "#2C344A")};
       color: ${({ darkMode }) => (darkMode ? "" : "#2C344A")};
+    }
+  }
+
+  @media (min-width: 576px) {
+    display: flex;
+    .darkmode {
+      top: 2%;
     }
   }
 `;

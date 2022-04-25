@@ -1,4 +1,5 @@
 import { Navbar } from "../styles/Navbar.styled";
+import SMHandles from "./SMHandles";
 import CallLogo from "../assets/svgs/CallLogo";
 import EmailLogo from "../assets/svgs/EmailLogo";
 import FacebookLogo from "../assets/svgs/FacebookLogo";
@@ -11,7 +12,7 @@ import TwitterLogo from "../assets/svgs/TwitterLogo";
 import LetterLogo from "../assets/svgs/Letter";
 import GithubIcon from "../assets/svgs/GithubIcon";
 import Link from "next/link";
-import { useContext, MouseEvent } from "react";
+import { useContext, useRef, useCallback, MouseEvent } from "react";
 import { Context } from "../assets/Context";
 import { useRouter } from "next/router";
 import { INavProps } from "../ts-types/componentTypes";
@@ -24,6 +25,36 @@ const Nav: React.FC<INavProps> = ({ setEl }) => {
   const trueToggler = () => setToggle(true);
 
   const falseToggler = () => setToggle(false);
+
+  const section = useRef<HTMLElement>(null);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const toggleNav = useCallback(() => {
+    setToggle(toggle => !toggle);
+    const el = section.current!;
+    let li,
+      time = 1;
+    if (!el) return;
+    let lists: Element[] | HTMLCollection[] = Array.from(el.children).map(
+      val => val.children
+    );
+    const [a] = lists;
+    lists = [...Array.from(a)];
+
+    if (!toggle) {
+      for (li of lists as unknown as HTMLCollectionOf<HTMLLIElement>) {
+        li.style.animation = `slide-out  .2s ${0.1 * time}s ease-in 1 forwards`;
+        time++;
+      }
+      el.style.animation = `slide-out .2s ease-in 1 .${time}s forwards`;
+    } else {
+      el.style.animation = "slide-in .15s ease-in 1 forwards";
+      for (li of lists as unknown as HTMLCollectionOf<HTMLLIElement>) {
+        li.style.animation = `slide-in 0.2s ${0.08 * time}s ease-in 1 forwards`;
+        time++;
+      }
+    }
+  }, [toggle, setToggle]);
 
   const scrollToId = (
     e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>
@@ -46,93 +77,102 @@ const Nav: React.FC<INavProps> = ({ setEl }) => {
       onTouchStart={trueToggler}
       darkMode={darkmode}
     >
-      <div>
+      <div className="logo">
         <LetterLogo />
       </div>
-      <ul>
-        <li>
-          <Link href="/">
-            <a>
-              <HomeLogo />
-              <span>Home</span>
-            </a>
-          </Link>
-        </li>
-        <li>
-          <button onClick={e => scrollToId(e)}>
-            <PersonLogo />
-            <span>About</span>
-          </button>
-        </li>
-        <li>
-          <button onClick={e => scrollToId(e)}>
-            <SkillsLogo />
-            <span>Skills</span>
-          </button>
-        </li>
-        <li>
-          <Link href="/AllProjects" scroll={false}>
-            <a>
-              <FileLogo />
-              <span>Projects</span>
-            </a>
-          </Link>
-        </li>
-        <li>
-          <button onClick={e => scrollToId(e)}>
-            <CallLogo />
-            <span>Contact</span>
-          </button>
-        </li>
-      </ul>
+      <section ref={section} className="list">
+        <ul>
+          <li>
+            <Link href="/">
+              <a>
+                <HomeLogo />
+                <span>Home</span>
+              </a>
+            </Link>
+          </li>
+          <li>
+            <button onClick={e => scrollToId(e)}>
+              <PersonLogo />
+              <span>About</span>
+            </button>
+          </li>
+          <li>
+            <button onClick={e => scrollToId(e)}>
+              <SkillsLogo />
+              <span>Skills</span>
+            </button>
+          </li>
+          <li>
+            <Link href="/AllProjects" scroll={false}>
+              <a>
+                <FileLogo />
+                <span>Projects</span>
+              </a>
+            </Link>
+          </li>
+          <li>
+            <button onClick={e => scrollToId(e)}>
+              <CallLogo />
+              <span>Contact</span>
+            </button>
+          </li>
+        </ul>
 
-      <ul>
-        <li>
-          <a
-            href="https://github.com/ibraheemsulay"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <GithubIcon />
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.linkedin.com/in/ibrahim-sule-23478919a"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <LinkedinLogo />
-          </a>
-        </li>
-        <li>
-          <a
-            href="mailto:ibraheemsulay@gmail.com"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <EmailLogo />
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.twitter.com/ibraheemsulay"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <TwitterLogo />
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.facebook.com/ibraheemsulay/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FacebookLogo />
-          </a>
-        </li>
-      </ul>
+        {/* {window.innerWidth > 576 && <SMHandles />} */}
+
+        {/* <ul>
+          <li>
+            <a
+              href="https://github.com/ibraheemsulay"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <GithubIcon />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/ibrahim-sule-23478919a"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <LinkedinLogo />
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:ibraheemsulay@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <EmailLogo />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.twitter.com/ibraheemsulay"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <TwitterLogo />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.facebook.com/ibraheemsulay/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FacebookLogo />
+            </a>
+          </li>
+        </ul> */}
+      </section>
+      <button className="hamburger" onClick={toggleNav}>
+        <span className="first"></span>
+        <span className="second"></span>
+        <span className="third"></span>
+      </button>
     </Navbar>
   );
 };

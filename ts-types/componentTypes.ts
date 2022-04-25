@@ -16,9 +16,8 @@ export interface ILayout {
   darkMode?: boolean;
 }
 
-export interface IAllProjectsProps {
+export interface IAllProjectsProps extends ILayout {
   projects: IProject[];
-  darkMode?: boolean;
 }
 
 export interface IIndexPageProps {
@@ -35,17 +34,12 @@ export interface IPaginationProps {
   setNumber: Dispatch<SetStateAction<number>>;
 }
 
-export interface IAboutProps {
+export interface IAboutProps extends ILayout {
   about: IAbout[];
-  darkMode?: boolean;
 }
 
-export interface ISkillsProps {
-  darkMode?: boolean;
-}
-export interface IHeroProps {
-  darkMode?: boolean;
-}
+export interface ISkillsProps extends ILayout {}
+export interface IHeroProps extends ILayout {}
 
 export interface INavProps {
   el: string;
