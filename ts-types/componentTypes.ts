@@ -11,12 +11,14 @@ export interface IProjectsProps {
   link: string;
 }
 
-export interface ILayout {
-  children: ReactElement;
+interface DarkMode {
   darkMode?: boolean;
 }
+export interface ILayout extends DarkMode {
+  children: ReactElement;
+}
 
-export interface IAllProjectsProps extends ILayout {
+export interface IAllProjectsProps extends DarkMode {
   projects: IProject[];
 }
 
@@ -34,12 +36,12 @@ export interface IPaginationProps {
   setNumber: Dispatch<SetStateAction<number>>;
 }
 
-export interface IAboutProps extends ILayout {
+export interface IAboutProps extends DarkMode {
   about: IAbout[];
 }
 
-export interface ISkillsProps extends ILayout {}
-export interface IHeroProps extends ILayout {}
+export interface ISkillsProps extends DarkMode {}
+export interface IHeroProps extends DarkMode {}
 
 export interface INavProps {
   el: string;
