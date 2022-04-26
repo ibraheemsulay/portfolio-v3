@@ -84,9 +84,9 @@ const Nav: React.FC<INavProps> = ({ setEl }) => {
       </div>
       <section ref={section} className="list">
         <ul>
-          <li>
+          <li onClick={toggleNav}>
             <Link href="/">
-              <a onClick={toggleNav}>
+              <a>
                 <HomeLogo />
                 <span>Home</span>
               </a>
@@ -104,9 +104,9 @@ const Nav: React.FC<INavProps> = ({ setEl }) => {
               <span>Skills</span>
             </button>
           </li>
-          <li>
+          <li onClick={toggleNav}>
             <Link href="/AllProjects" scroll={false}>
-              <a onClick={toggleNav}>
+              <a>
                 <FileLogo />
                 <span>Projects</span>
               </a>
