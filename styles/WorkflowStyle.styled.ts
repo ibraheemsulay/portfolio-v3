@@ -5,7 +5,7 @@ export const WorkflowStyle = styled.section<IStyle>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 50px;
   z-index: 111;
   padding: 0 15px;
 

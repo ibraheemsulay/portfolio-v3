@@ -14,7 +14,7 @@ export const Navbar = styled.nav<INavbarStyle>`
   color: ${({ theme, darkMode }) =>
     darkMode ? theme.theme2.navTextCol : theme.theme1.navTextCol};
   justify-content: space-between;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   overflow: hidden;
   transition: all 0.3s ease-in;
 
@@ -152,7 +152,7 @@ export const Navbar = styled.nav<INavbarStyle>`
       margin-left: auto;
     }
 
-    ${({ theme, toggle, toggleIcon }) =>
+    ${({ toggleIcon }) =>
       toggleIcon &&
       `
       padding-right: 0.1rem;
@@ -170,9 +170,9 @@ export const Navbar = styled.nav<INavbarStyle>`
   }
 
   @media (min-width: 576px) {
-    position: fixed;
     width: unset;
     height: 100vh;
+    padding: 1rem 0;
     z-index: 1;
     max-height: 100vh;
     flex-direction: column;

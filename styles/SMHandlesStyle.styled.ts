@@ -4,6 +4,8 @@ import { ISMHandlesStyle } from "../ts-types/styleTypes";
 export const SMHandlesStyle = styled.ul<ISMHandlesStyle>`
   list-style-type: none;
   padding-inline-start: 0;
+  display: flex;
+
   li {
     display: flex;
     justify-content: center;
@@ -44,5 +46,9 @@ export const SMHandlesStyle = styled.ul<ISMHandlesStyle>`
         fill: ${({ theme }) => theme.theme1.navHoverCol};
       }
     }
+  }
+
+  @media (min-width: 576px) {
+    display: block;
   }
 `;

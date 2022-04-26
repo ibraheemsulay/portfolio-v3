@@ -1,10 +1,7 @@
 import { Navbar } from "../styles/Navbar.styled";
 import SMHandles from "./SMHandles";
 import CallLogo from "../assets/svgs/CallLogo";
-import EmailLogo from "../assets/svgs/EmailLogo";
-import FacebookLogo from "../assets/svgs/FacebookLogo";
 import FileLogo from "../assets/svgs/FileLogo";
-import LinkedinLogo from "../assets/svgs/LinkedinLogo";
 import HomeLogo from "../assets/svgs/HomeLogo";
 import SkillsLogo from "../assets/svgs/SkillsLogo";
 import PersonLogo from "../assets/svgs/PersonLogo";
@@ -57,7 +54,7 @@ const Nav: React.FC<INavProps> = ({ setEl }) => {
         time++;
       }
     }
-  }, [toggleIcon]);
+  }, [toggleIcon, setToggleIcon]);
 
   const scrollToId = (
     e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>
@@ -183,19 +180,3 @@ const Nav: React.FC<INavProps> = ({ setEl }) => {
 };
 
 export default Nav;
-
-// &:hover {
-//   padding-right: 0.1rem;
-//   .first {
-//     width: 42.4px;
-//     transform: rotateZ(45deg) translate(10%, 300%);
-//   }
-//   .second {
-//     opacity: 0;
-//     background: red;
-//   }
-//   .third {
-//     width: 42.4px;
-//     transform: rotateZ(-45deg) translate(10%, -300%);
-//   }
-// }

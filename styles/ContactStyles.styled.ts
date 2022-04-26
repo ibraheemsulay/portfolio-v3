@@ -5,10 +5,6 @@ import { IStyle } from "../ts-types/styleTypes";
 export const ContactStyles = styled(Container)<IStyle>`
   margin-top: 100px;
 
-  @media (min-width: 576px) {
-    margin-top: 150px;
-  }
-
   h3 {
     width: max-content;
     margin: auto;
@@ -24,10 +20,6 @@ export const ContactStyles = styled(Container)<IStyle>`
       position: relative;
       width: 100%;
 
-      @media (min-width: 768px) {
-        width: 40%;
-      }
-
       img {
         max-width: 100%;
         height: auto;
@@ -35,6 +27,42 @@ export const ContactStyles = styled(Container)<IStyle>`
 
       h4 {
         margin-top: 15px;
+      }
+    }
+
+    .media {
+      display: flex;
+      margin-top: 25px;
+
+      a {
+        margin-top: -25px;
+      }
+      ul {
+        flex-grow: 1;
+        display: flex;
+        justify-content: space-evenly;
+
+        li {
+          background: ${({ theme }) => theme.theme1.navBgCol};
+          border: 2px solid ${({ theme }) => theme.theme1.navTextCol};
+          border-radius: 10px;
+          height: 40px;
+
+          a {
+            margin: 0;
+          }
+          svg {
+            height: 20px;
+          }
+
+          &:first-child {
+            margin-left: 0;
+          }
+
+          &:nth-of-type(3) {
+            display: none;
+          }
+        }
       }
     }
   }
@@ -47,5 +75,25 @@ export const ContactStyles = styled(Container)<IStyle>`
     font-size: small;
     text-align: center;
     padding: 20px;
+  }
+
+  @media (min-width: 576px) {
+    margin-top: 150px;
+
+    footer {
+      .media {
+        ul {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    footer {
+      div {
+        width: 40%;
+      }
+    }
   }
 `;

@@ -28,16 +28,16 @@ const Contact = () => {
             your amazing project ideas? Or do you have other opportunities you
             would like to share with me?
           </p>
+          <div className="media">
+            <a href="mailto:ibraheemsulay@gmail.com" rel="noreferrer">
+              <Button>Email Me </Button>
+            </a>
 
-          <a href="mailto:ibraheemsulay@gmail.com" rel="noreferrer">
-            <Button>Email Me </Button>
-          </a>
-          <div>
             <SMHandles />
           </div>
         </div>
       </footer>
-      <span>&copy; {date.getFullYear()}</span>
+      <span>Ibrahim &copy; {date.getFullYear()}</span>
     </ContactStyles>
   );
 };
