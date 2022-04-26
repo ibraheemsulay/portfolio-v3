@@ -69,7 +69,11 @@ const Nav: React.FC<INavProps> = ({ setEl }) => {
       router.push("/");
       return;
     }
-    setTimeout(() => el?.scrollIntoView(true), 1000);
+    if (innerText === "PersonAbout") {
+      const el = document.getElementsByClassName(innerText)[0];
+      el?.scrollIntoView(true);
+    }
+    el?.scrollIntoView(true);
   };
 
   return (

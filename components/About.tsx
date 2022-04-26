@@ -20,8 +20,8 @@ const About: React.FC<IAboutProps> = ({ about }) => {
   return (
     <AboutStyle darkMode={darkmode}>
       <Blob />
-      <Row>
-        <h3 id="PersonAbout">About Me</h3>
+      <Row className="PersonAbout">
+        <h3>About Me</h3>
       </Row>
       <div>
         <HeroStyle>
