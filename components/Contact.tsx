@@ -37,7 +37,9 @@ const Contact = () => {
           </div>
         </div>
       </footer>
-      <span>Ibrahim &copy; {date.getFullYear()}</span>
+      <span>
+        <strong>Ibrahim</strong> &copy; {date.getFullYear()}
+      </span>
     </ContactStyles>
   );
 };

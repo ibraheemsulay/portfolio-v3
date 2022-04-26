@@ -28,6 +28,8 @@ const Nav: React.FC<INavProps> = ({ setEl }) => {
   const toggleNav = useCallback(() => {
     if (window.innerWidth > 576) return;
 
+    console.log("woring");
+
     setToggleIcon(toggle => !toggle);
 
     const el = section.current!;
@@ -67,7 +69,7 @@ const Nav: React.FC<INavProps> = ({ setEl }) => {
       router.push("/");
       return;
     }
-    el?.scrollIntoView(true);
+    setTimeout(() => el?.scrollIntoView(true), 1000);
   };
 
   return (
@@ -121,54 +123,6 @@ const Nav: React.FC<INavProps> = ({ setEl }) => {
         </ul>
 
         <SMHandles />
-
-        {/* <ul>
-          <li>
-            <a
-              href="https://github.com/ibraheemsulay"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <GithubIcon />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/ibrahim-sule-23478919a"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <LinkedinLogo />
-            </a>
-          </li>
-          <li>
-            <a
-              href="mailto:ibraheemsulay@gmail.com"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <EmailLogo />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.twitter.com/ibraheemsulay"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <TwitterLogo />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.facebook.com/ibraheemsulay/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FacebookLogo />
-            </a>
-          </li>
-        </ul> */}
       </section>
       <button className="hamburger" onClick={toggleNav}>
         <span className="first"></span>
