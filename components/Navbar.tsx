@@ -28,8 +28,6 @@ const Nav: React.FC<INavProps> = ({ setEl }) => {
   const toggleNav = useCallback(() => {
     if (window.innerWidth > 576) return;
 
-    console.log("woring");
-
     setToggleIcon(toggle => !toggle);
 
     const el = section.current!;

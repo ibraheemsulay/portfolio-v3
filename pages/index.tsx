@@ -113,7 +113,7 @@ const MainBody: NextPage<IIndexPageProps> = props => {
           <Container>
             <Hero />
           </Container>
-          <div>
+          <div id="PersonAbout">
             <About about={about} />
           </div>
 
