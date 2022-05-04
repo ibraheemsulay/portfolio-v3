@@ -7,7 +7,14 @@ import SkillsLogo from "../assets/svgs/SkillsLogo";
 import PersonLogo from "../assets/svgs/PersonLogo";
 import LetterLogo from "../assets/svgs/Letter";
 import Link from "next/link";
-import { MouseEvent, useContext, useRef, useCallback } from "react";
+import {
+  MouseEvent,
+  useContext,
+  useRef,
+  useCallback,
+  useEffect,
+  useState,
+} from "react";
 import { Context } from "../assets/Context";
 import { useRouter } from "next/router";
 import { INavProps } from "../ts-types/componentTypes";
@@ -16,6 +23,8 @@ const Nav: React.FC<INavProps> = ({ setEl }) => {
   const { darkmode, toggle, setToggle, toggleIcon, setToggleIcon } =
     useContext(Context);
 
+  const [navLink, setNavLink] = useState<string>("");
+
   const router = useRouter();
 
   const trueToggler = () => setToggle(true);
@@ -23,6 +32,12 @@ const Nav: React.FC<INavProps> = ({ setEl }) => {
   const falseToggler = () => setToggle(false);
 
   const section = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const el = document.getElementById(navLink);
+    if (!el) return;
+    setTimeout(() => el?.scrollIntoView(true), 100);
+  }, [navLink]);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const toggleNav = useCallback(() => {
@@ -61,13 +76,12 @@ const Nav: React.FC<INavProps> = ({ setEl }) => {
   ) => {
     const innerText = e.currentTarget.textContent!;
     toggleNav();
-    const el = document.getElementById(innerText);
+    setNavLink(() => innerText);
     if (router.pathname === "/AllProjects") {
       setEl(innerText);
       router.push("/");
       return;
     }
-    el?.scrollIntoView(true);
   };
 
   return (
